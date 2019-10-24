@@ -17,11 +17,14 @@ public class MyDraw extends View {
     Paint paint = new Paint();
     float x = 0;
 
+    long lastTime = System.currentTimeMillis();
+
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawCircle(x, 300, 20, paint);
-        // готовим x для следущего кадра
-        x += 5f;
+        long nowTime = System.currentTimeMillis();
+        x += 0.01f * (nowTime - lastTime);
+        lastTime = nowTime;
         invalidate();
     }
 }
