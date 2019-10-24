@@ -33,16 +33,18 @@ public class MyDraw extends View {
 
             w[i] = Math.sqrt(g/l[i]);
         }
+
     }
     void movePendulum()
     {
         t += deltaT;
 
-        for (int i = 0; i<N; i++)
-        {
+        for (int i = 0; i<N; i++) {
             fi[i] = fi0 * Math.cos(w[i] * t);
-            x[i] = l[i]*Math.sin(fi[i]);
-            y[i] = l[i]*Math.cos(fi[i]);
+            x[i] = l[i] * Math.sin(fi[i]);
+            y[i] = l[i] * Math.cos(fi[i]);
+
+
         }
     }
 
@@ -58,13 +60,15 @@ public class MyDraw extends View {
         x0 = getWidth()/2;
         y0 = getHeight()/4;
         Paint paint = new Paint();
-        canvas.drawCircle((float) x0, (float) y0, 10, paint);
+        paint.setColor(Color.BLUE);
+        canvas.drawCircle((float) x0, (float) y0, 20, paint);
         for (int i = 0; i<N; i++)
         {
-            paint.setColor(Color.BLUE);
+            paint.setColor(Color.BLACK);
             canvas.drawLine((float)x0, (float)y0, (float)(x[i] + x0), (float)(y[i]+ y0), paint);
-            paint.setColor(Color.RED);
-            canvas.drawCircle((float)(x[i] + x0), (float)(y[i] + y0), 20, paint);
+            paint.setColor(Color.GREEN);
+            canvas.drawCircle((float)(x[i] + x0), (float)(y[i] + y0), 25, paint);
+
         }
     }
 
@@ -78,7 +82,7 @@ public class MyDraw extends View {
     {
         MyTimer()
         {
-            super(100000, 100);
+            super(1000000, 10);
         }
         @Override
         public void onTick(long millisUntilFinished) {
