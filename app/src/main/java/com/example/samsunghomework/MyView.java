@@ -17,26 +17,17 @@ public class MyView extends View {
     }
 
 
+    Paint paint = new Paint();
+    float x = 0;
+
     @Override
-
-
     protected void onDraw(Canvas canvas) {
-        int y = 0;
-        while (y < getHeight()) {
-            @SuppressLint("DrawAllocation") Paint paint = new Paint();
-            canvas.drawLine(0, y, getWidth() - y, getHeight(), paint);
-            y += 30;
-        }
-        int x = 0;
-        while (x < getWidth()) {
-            @SuppressLint("DrawAllocation") Paint paint = new Paint();
-            canvas.drawLine(x, 0, getWidth(), getHeight() - x, paint);
-            x += 30;
-
-        }
+        canvas.drawCircle(x, 300, 20, paint);
+        // готовим x для следущего кадра
+        x += 5f;
+        invalidate();
     }
 }
-
 
 
 
