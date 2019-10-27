@@ -1,95 +1,106 @@
 package com.example.samsunghomework;
 
-import android.annotation.SuppressLint;
+
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.os.CountDownTimer;
+import android.os.Bundle;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.Button;
+import android.widget.GridLayout;
 
-@SuppressLint("DrawAllocation")
-public class MyDraw extends View {
-    int N = 15;
-    int[] l = new int [N];
-    double x0, y0;
-    double[] x = new double [N];
-    double[] y = new double [N];
-    double g = 9.832f, pi = Math.PI;
-    double[] w = new double[N];
-    double fi0;
-    double[] fi = new double[N];
-    int t = 0, deltaT = 1;
 
-    void makePendulum()
-    {
-        fi0 = pi/4;
+public class MyDraw extends Activity implements OnClickListener,
+        OnLongClickListener {
 
-        int l_min = 100;
-        for (int i = 0; i<N; i++)
-        {
-            l[i] = l_min;
-            l_min += 50;
+    private int WIDTH = 10;
+    private int HEIGHT = 10;
 
-            w[i] = Math.sqrt(g/l[i]);
-        }
+    private Button[][] cells;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.cells);
+        makeCells();
+
+        generate();
 
     }
-    void movePendulum()
-    {
-        t += deltaT;
 
-        for (int i = 0; i<N; i++) {
-            fi[i] = fi0 * Math.cos(w[i] * t);
-            x[i] = l[i] * Math.sin(fi[i]);
-            y[i] = l[i] * Math.cos(fi[i]);
+    void generate() {
 
 
-        }
-    }
+        int num = 1;
+        for (int i = 0; i < HEIGHT; i++)
+            for (int j = 0; j < WIDTH; j++) {
+                cells[i][j].setText(num + "");
+                num++;
+            }
 
-    MyDraw(Context context) {
-        super(context);
-        makePendulum();
-        MyTimer timer = new MyTimer();
-        timer.start();
+
+}
+
+    @Override
+    public boolean onLongClick(View v) {
+        //Эту строку нужно удалить
+        return false;
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        x0 = getWidth()/2;
-        y0 = getHeight()/4;
-        Paint paint = new Paint();
-        paint.setColor(Color.BLUE);
-        canvas.drawCircle((float) x0, (float) y0, 20, paint);
-        for (int i = 0; i<N; i++)
+    public void onClick(View v) {
+
+
+        Button tappedCell = (Button) v;
+
+        //Получаем координтаты нажатой клетки
+        int tappedX = getX(tappedCell);
+        int tappedY = getY(tappedCell);
+        for (int x = 0; x < WIDTH; x++)
         {
-            paint.setColor(Color.BLACK);
-            canvas.drawLine((float)x0, (float)y0, (float)(x[i] + x0), (float)(y[i]+ y0), paint);
-            paint.setColor(Color.GREEN);
-            canvas.drawCircle((float)(x[i] + x0), (float)(y[i] + y0), 25, paint);
-
+            cells[tappedY][x].setBackgroundColor(Color.RED);
         }
-    }
-
-    void nextFrame()
-    {
-        movePendulum();
-        invalidate();
-    }
-
-    class MyTimer extends CountDownTimer
-    {
-        MyTimer()
+        for (int y = 0; y < WIDTH; y++)
         {
-            super(1000000, 10);
+            cells[y][tappedX].setBackgroundColor(Color.RED);
         }
-        @Override
-        public void onTick(long millisUntilFinished) {
-            nextFrame();
-        }
-        @Override
-        public void onFinish() {
-        }
+
     }
+
+
+
+    /*
+     * NOT FOR THE BEGINNERS
+     * ==================================================
+     */
+
+    int getX(View v) {
+        return Integer.parseInt(((String) v.getTag()).split(",")[1]);
+    }
+
+    int getY(View v) {
+        return Integer.parseInt(((String) v.getTag()).split(",")[0]);
+    }
+
+    void makeCells() {
+        cells = new Button[HEIGHT][WIDTH];
+        GridLayout cellsLayout = (GridLayout) findViewById(R.id.CellsLayout);
+        cellsLayout.removeAllViews();
+        cellsLayout.setColumnCount(HEIGHT);
+        for (int i = 0; i < HEIGHT; i++)
+            for (int j = 0; j < WIDTH; j++) {
+                LayoutInflater inflater = (LayoutInflater) getApplicationContext()
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                cells[i][j] = (Button) inflater.inflate(R.layout.cell, cellsLayout, false);
+                cells[i][j].setOnClickListener(this);
+                cells[i][j].setOnLongClickListener(this);
+                cells[i][j].setTag(i + "," + j);
+                cellsLayout.addView(cells[i][j]);
+            }
+    }
+
 }
