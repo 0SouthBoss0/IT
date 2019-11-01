@@ -8,10 +8,11 @@ import android.view.View;
 public class MyDraw extends View {
 
     int N = 50; // количество шариков
-    float[] x  = new float[N];
-    float[] y  = new float[N];
+    float[] x = new float[N];
+    float[] y = new float[N];
     float[] vx = new float[N];
     float[] vy = new float[N];
+
     public MyDraw(Context context) {
         super(context);
         for (int i = 0; i < N; i++) {
@@ -22,28 +23,29 @@ public class MyDraw extends View {
         }
 
     }
-    void add(float[] array , float[] values){
-        for (int i = 0; i < array.length; i++){
+
+    void add(float[] array, float[] values) {
+        for (int i = 0; i < array.length; i++) {
             array[i] += values[i];
         }
     }
+
     Paint paint = new Paint();
 
     @Override
     protected void onDraw(Canvas canvas) {
         // отрисовываем все шарики
+        drawBalls(canvas);
+        // готовим массивы x и у для следующего кадра
+        add(x, vx);
+        add(y, vy);
+        // запрашиваем перерисовку
+        invalidate();
+    }
+
+    private void drawBalls(Canvas canvas) {
         for (int i = 0; i < N; i++) {
             canvas.drawCircle(x[i], y[i], 20, paint);
         }
-        // готовим массивы x и у для следущего кадра
-        for (int i = 0; i < N; i++) {
-            x[i] += vx[i];
-            y[i] += vy[i];
-        }
-        add(x, vx);
-        add(y, vy);
-        //запрашиваем перерисовку
-        invalidate();
-
     }
 }
