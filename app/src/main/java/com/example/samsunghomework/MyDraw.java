@@ -1,5 +1,6 @@
 package com.example.samsunghomework;
 
+<<<<<<< HEAD
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,12 +8,18 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
+=======
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+>>>>>>> master
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
 import android.widget.GridLayout;
 
+<<<<<<< HEAD
 
 public class MyDraw extends Activity implements OnClickListener,
         OnLongClickListener {
@@ -69,6 +76,48 @@ public class MyDraw extends Activity implements OnClickListener,
             cells[y][tappedX].setBackgroundColor(Color.RED);
         }
 
+=======
+public class MyDraw extends View {
+
+    int N = 50; // количество шариков
+    float[] x  = new float[N];
+    float[] y  = new float[N];
+    float[] vx = new float[N];
+    float[] vy = new float[N];
+    public MyDraw(Context context) {
+        super(context);
+        for (int i = 0; i < N; i++) {
+            x[i] = (float) (Math.random() * 500);
+            y[i] = (float) (Math.random() * 500);
+            vx[i] = (float) (Math.random() * 6 - 3);
+            vy[i] = (float) (Math.random() * 6 - 3);
+        }
+
+    }
+    void add(float[] array , float[] values){
+        for (int i = 0; i < array.length; i++){
+            array[i] += values[i];
+        }
+    }
+    Paint paint = new Paint();
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        // отрисовываем все шарики
+        for (int i = 0; i < N; i++) {
+            canvas.drawCircle(x[i], y[i], 20, paint);
+        }
+        // готовим массивы x и у для следущего кадра
+        for (int i = 0; i < N; i++) {
+            x[i] += vx[i];
+            y[i] += vy[i];
+        }
+        add(x, vx);
+        add(y, vy);
+        //запрашиваем перерисовку
+        invalidate();
+
+>>>>>>> master
     }
 
 
