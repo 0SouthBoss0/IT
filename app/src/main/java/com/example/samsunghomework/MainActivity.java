@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void generate() {
 
-
         for (int i = 0; i < HEIGHT; i++)
             for (int j = 0; j < WIDTH; j++)
                 if (Math.random() >= 0.5) {
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 }
-
+        Task.showMessage(this, "ЗАКРАСЬТЕ ВСЕ КЛЕТКИ ОДНИМ ЦВЕТОМ ЗА 10 ХОДОВ");
     }
 
 
@@ -78,8 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         count--;
         cells[0][0].setText(count + "");
-        if (count == 0) System.exit(1);
-        int check=0;
+
+        if (count == 0) {
+
+            System.exit(1);
+        }
+        int check = 0;
         int check1;
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -90,16 +94,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 if (check1 != color1) {
+
                     break;
+
 
                 } else check++;
             }
         }
 
-        if (check ==100) {
-            cells[0][0].setText("W");
-            cells[1][0].setText("I");
-            cells[2][0].setText("N");
+        if (check == 100) {
+            Task.showMessage(this, "ПОЗДРАВЛЯЮ, ВЫ ПОБЕДИЛИ");
 
 
         }
