@@ -4,7 +4,7 @@
     android:layout_height="72dp"
     android:background="@android:color/white"
 
-    android:textColor="@android:color/black"
+    android:textColor="@android:color/holo_green_light"
     android:textSize="40sp"
     android:layout_margin="2.5dp"
     android:textStyle="bold" />
