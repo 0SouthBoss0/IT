@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private int WIDTH = 10;
     private int HEIGHT = 10;
-    int count = 10;
+    int count = 11;
     Button[][] cells;
 
     @Override
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = 0; j < WIDTH; j++)
                 if (Math.random() >= 0.5) {
                     cells[i][j].setBackgroundColor(BLACK);
-                    cells[0][0].setText(count + "");
+                    cells[0][0].setText((count-1) + "");
 
 
                 }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         count--;
-        cells[0][0].setText(count + "");
+        cells[0][0].setText((count-1) + "");
 
         if (count == 0) {
 
