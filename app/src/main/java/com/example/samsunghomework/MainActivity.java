@@ -2,14 +2,13 @@ package com.example.samsunghomework;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +16,6 @@ import static android.graphics.Color.BLACK;
 import static android.graphics.Color.WHITE;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     private int WIDTH = 10;
     private int HEIGHT = 10;
     int count = 11;
@@ -28,9 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cells);
         makeCells();
-
         generate();
-
     }
 
     void generate() {
@@ -39,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = 0; j < WIDTH; j++)
                 if (Math.random() >= 0.5) {
                     cells[i][j].setBackgroundColor(BLACK);
-                    cells[0][0].setText((count-1) + "");
+                    cells[0][0].setText((count - 1) + "");
 
 
                 }
@@ -77,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         count--;
-        cells[0][0].setText((count-1) + "");
+        cells[0][0].setText((count - 1) + "");
 
         if (count == 0) {
 
