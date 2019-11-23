@@ -1,58 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.samsunghomework.MainActivity">
+    android:background="#E0E0E0"
+    android:orientation="vertical">
 
-    <LinearLayout
+
+    <EditText
+        android:id="@+id/editText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#800080"
-        android:orientation="horizontal" />
+        android:gravity="center"
+        android:hint="LOGIN (default southboss)" />
 
-
-    <LinearLayout
+    <EditText
+        android:id="@+id/editText2"
         android:layout_width="match_parent"
-        android:layout_height="310dp"
-        android:layout_weight="1"
-        android:background="#800080"
-        android:orientation="horizontal">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#00008B"
-            android:orientation="vertical" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#800000"
-            android:orientation="horizontal" />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="PASSWORD (default klass)"
+        android:inputType="textPassword" />
 
     <TextView
+        android:id="@+id/qqq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Мы готовы к диалогу с НАТО, даже если это будет монолог."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center|center_horizontal|top"
+        android:text="ENTER LOGIN AND PASSWORD"
+        android:textColor="#23282b" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="90dp"
+        android:layout_height="91dp"
+        android:layout_gravity="center"
+        android:background="#523c36"
+        android:onClick="onClick"
+        android:text="TAP TO GO" />
+
 
 </LinearLayout>
