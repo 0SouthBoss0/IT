@@ -3,7 +3,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0E0E0"
+    android:background="#bbbbbb"
     android:orientation="vertical">
 
 
@@ -34,6 +34,7 @@
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal|top"
         android:text="ВВЕДИТЕ КОЭФФИЦЕНТЫ (ЕСЛИ КОЭФФИЦЕНТА НЕТ, ТО ЧИСЛО В СКОБКАХ) "
+        android:textSize="15dp"
         android:textColor="#23282b" />
 
     <Button
@@ -41,9 +42,11 @@
         android:layout_width="90dp"
         android:layout_height="91dp"
         android:layout_gravity="center"
-        android:background="#523c36"
+        android:background="#025669"
         android:onClick="onClick"
-        android:text="TAP TO GO" />
+        android:text="TAP TO GO"
+        android:textStyle="bold"
+        android:textColor="#bbbbbb"/>
 
 
 </LinearLayout>
