@@ -7,35 +7,81 @@
     android:orientation="vertical">
 
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/mirage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="КОЭФФИЦЕНТ A (1)" />
+        android:text="Mirage" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/cache"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="КОЭФФИЦЕНТ B (1)" />
+        android:text="Cache" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
+    <CheckBox
+        android:id="@+id/inferno"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="КОЭФФИЦЕНТ C (0)" />
+        android:text="Inferno" />
+
+    <CheckBox
+        android:id="@+id/overpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overpass" />
+
+    <CheckBox
+        android:id="@+id/train"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Train" />
+
+    <CheckBox
+        android:id="@+id/nuke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nuke" />
+
+    <CheckBox
+        android:id="@+id/vertigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vertigo" />
+
+    <CheckBox
+        android:id="@+id/dust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dust II" />
+
+    <CheckBox
+        android:id="@+id/cobblestone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cobblestone" />
+
+    <CheckBox
+        android:id="@+id/office"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Office" />
+
+    <CheckBox
+        android:id="@+id/agency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agency" />
 
     <TextView
         android:id="@+id/qqq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center|center_horizontal|top"
-        android:text="ВВЕДИТЕ КОЭФФИЦЕНТЫ (ЕСЛИ КОЭФФИЦЕНТА НЕТ, ТО ЧИСЛО В СКОБКАХ) "
-        android:textSize="15dp"
-        android:textColor="#23282b" />
+        android:text="ВЫБЕРЕТЕ КАРТЫ, НА КОТОРЫХ НЕ ХОТИТЕ ИГРАТЬ"
+        android:textColor="#23282b"
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/button"
@@ -45,8 +91,26 @@
         android:background="#025669"
         android:onClick="onClick"
         android:text="TAP TO GO"
-        android:textStyle="bold"
-        android:textColor="#bbbbbb"/>
+        android:textColor="#bbbbbb"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center|center_horizontal|top"
+        android:text=""
+        android:textColor="#23282b"
+        android:textSize="30dp" />
+    <TextView
+        android:id="@+id/ERROR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center|center_horizontal|top"
+        android:text=""
+        android:textColor="#23282b"
+        android:textSize="15dp" />
 
 </LinearLayout>
