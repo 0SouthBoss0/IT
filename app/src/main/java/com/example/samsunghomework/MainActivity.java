@@ -1,24 +1,19 @@
 package com.example.samsunghomework;
 
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.EditText;
-import android.widget.GridLayout;
+
 import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static android.graphics.Color.BLACK;
-import static android.graphics.Color.GREEN;
-import static android.graphics.Color.RED;
-import static android.graphics.Color.WHITE;
+
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
@@ -28,53 +23,91 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     public void onClick(View view) {
-
-        int check = 0;
-        final String s1 = "southboss";
-        final String s2 = "klass";
-
         TextView itog = findViewById(R.id.qqq);
+        EditText aaa = findViewById(R.id.editText1);
+        EditText bbb = findViewById(R.id.editText2);
+        EditText ccc = findViewById(R.id.editText3);
+        String aa = aaa.getText().toString();
+        String bb = bbb.getText().toString();
+        String cc = ccc.getText().toString();
+        int a = Integer.parseInt(aa);
+        int b = Integer.parseInt(bb);
+        int c = Integer.parseInt(cc);
 
-        EditText LOGINJUST = findViewById(R.id.editText1);
-        EditText PASSWORDJUST = findViewById(R.id.editText2);
+        double D = b * b - 4 * a * c;
+        if (D < 0) {
+            itog.setText("Корней нет");
 
-        String LOGIN = LOGINJUST.getText().toString();
-        String PASSWORD = PASSWORDJUST.getText().toString();
-        if ((LOGIN.equals(s1)) && (PASSWORD.equals(s2) || (LOGIN.equals(s1)) && (PASSWORD.equals(s2)))) {
-
-            itog.setTextColor(GREEN);
-            itog.setText("WELCOME");
-            itog.invalidate();
-            LOGINJUST.setText("");
-            PASSWORDJUST.setText("");
-            check = 1;
-        } else {
-            itog.setTextColor(RED);
-            itog.setText("INCORRECT");
-            itog.invalidate();
-            LOGINJUST.setText("");
-            PASSWORDJUST.setText("");
         }
-        if (check == 0) {
-            Intent i = new Intent(MainActivity.this, Registration.class);
-            startActivityForResult(i, 1);
+        if (D == 0) {
+
+            double x = -b / (2 * a);
+
+            itog.setText((int) x);
+
 
         }
 
+        if (D > 0) {
+            D = Math.sqrt(D);
+            double x1 = ((-b - D) / (2 * a));
+            double x2 = ((-b + D) / (2 * a));
+            int x1int = 0;
+            int x2int = 0;
+            int flag1 = 0;
+            int flag2 = 0;
+            if ((int) x1 == (x1)) {
+                x1int = (int) x1;
+                flag1 = 1;
+            }
+            if ((int) x2 == (x2)) {
+                x2int = (int) x2;
+                flag2 = 1;
+            }
 
-    }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (resultCode) {
-            case RESULT_OK:
-                EditText LOGINJUST = findViewById(R.id.editText1);
-                EditText PASSWORDJUST = findViewById(R.id.editText2);
-                LOGINJUST.setText(data.getStringExtra("editText1"));
-                final String qqlog = (data.getStringExtra("editText1"));
-                final String qqpas = (data.getStringExtra("2"));
+            if ((flag1 == 0) && (flag2 == 0)) {
+                if (x1 > x2) {
+                    itog.setText((x2) + " ; " + (x1));
 
-                break;
+                } else {
+                    itog.setText((x1) + " ; " + (x2));
+
+                }
+
+            }
+            if ((flag1 == 1) && (flag2 == 0)) {
+                if (x1 > x2) {
+                    itog.setText((x2) + " ; " + (x1int));
+
+                } else {
+                    itog.setText((x1int) + " ; " + (x2));
+
+                }
+
+            }
+            if (flag1 == 0) {
+                if (x1 > x2) {
+                    itog.setText((x2int) + " ; " + (x1));
+
+                } else {
+                    itog.setText((x1) + " ; " + (x2int));
+
+                }
+
+            }
+            if ((flag1 == 1) && (flag2 == 1)) {
+                if (x1 > x2) {
+                    itog.setText((x2int) + " ; " + (x1int));
+
+                } else {
+                    itog.setText((x1int) + " ; " + (x2int));
+
+                }
+
+            }
         }
     }
 }
