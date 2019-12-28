@@ -4,7 +4,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView txt = findViewById(R.id.txt);
-        Button button1 = findViewById(R.id.bt1);
+        final Button button1 = findViewById(R.id.bt1);
         Button button2 = findViewById(R.id.bt2);
 
 
@@ -32,22 +34,33 @@ public class MainActivity extends AppCompatActivity {
                 if (CRACK == 0) {
                     new QQ().execute();
                 } else {
-                    i = 0; CRACK = 0;
+                    i = 0;
+                    CRACK = 0;
                 }
-
 
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
+
             @Override
+
             public void onClick(View view) {
                 CRACK = 1;
+                end();
+
 
             }
+
         });
     }
 
+    public void end() {
+        TextView txt = findViewById(R.id.txt);
+        int q = 0;
 
+            txt.setText("END");
+
+    }
     public void onProgressUpdate(Integer qqq) {
 
         TextView txt = findViewById(R.id.txt);
