@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
+    QQ qq = new QQ();
     int CRACK = 0;
     int i = 0;
 
@@ -31,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
 
             public void onClick(View view) {
+
                 if (CRACK == 0) {
-                    new QQ().execute();
+                    qq.execute();
                 } else {
                     i = 0;
                     CRACK = 0;
@@ -43,24 +44,16 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
 
             @Override
-
             public void onClick(View view) {
-                CRACK = 1;
-                end();
+                qq.cancel();
 
-
+                TextView txt = findViewById(R.id.txt);
+                txt.setText("0");
             }
-
         });
     }
 
-    public void end() {
-        TextView txt = findViewById(R.id.txt);
-        int q = 0;
 
-            txt.setText("END");
-
-    }
     public void onProgressUpdate(Integer qqq) {
 
         TextView txt = findViewById(R.id.txt);
@@ -69,12 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private class QQ extends AsyncTask<Integer, Integer, Integer> {
 
-
+    private class QQ extends AsyncTask<Integer, Integer, Integer> { ///
         @Override
-
-
         protected void onPreExecute() {
             super.onPreExecute();
         }
