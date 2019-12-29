@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Random random = new Random();
         int qwertyuiop = 0;
         while (qwertyuiop == 0) {
-            qwertyuiop = (random.nextInt(3));
+            qwertyuiop =    (random.nextInt(3));
         }
     }
 
