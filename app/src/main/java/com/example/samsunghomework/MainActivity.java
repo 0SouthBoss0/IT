@@ -1,104 +1,43 @@
 package com.example.samsunghomework;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-    QQ qq = new QQ();
-    int CRACK = 0;
-    int i = 0;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+public class MainActivity extends Activity {
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        TextView txt = findViewById(R.id.txt);
-        final Button button1 = findViewById(R.id.bt1);
-        Button button2 = findViewById(R.id.bt2);
-
-
-        button1.setOnClickListener(new View.OnClickListener() {
+        final ImageView iv = new ImageView(this);
+        setContentView(iv);
+        Thread t = new Thread()  {
             @Override
-
-
-            public void onClick(View view) {
-
-                if (CRACK == 0) {
-                    qq.execute();
-                } else {
-                    i = 0;
-                    CRACK = 0;
-                }
-
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                qq.cancel();
-
-                TextView txt = findViewById(R.id.txt);
-                txt.setText("0");
-            }
-        });
-    }
-
-
-    public void onProgressUpdate(Integer qqq) {
-
-        TextView txt = findViewById(R.id.txt);
-        Integer qqqq = qqq;
-        txt.setText(String.valueOf(qqqq));
-
-    }
-
-
-    private class QQ extends AsyncTask<Integer, Integer, Integer> { ///
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-
-        protected Integer doInBackground(Integer... args) {
-            for (int i = 0; i < 1000000; i++) {
-
+            public void run() {
                 try {
-                    Thread.sleep(1000); ///задержка
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                peredacha1(i);
-
-            }
-
-
-            return null;
-        }
-
-        private void peredacha1(Integer i) {
-            Integer qq = i;
-            peredacha2(qq);
-        }
+                    final Bitmap bitmap = BitmapFactory.decodeStream(new URL("https://memepedia.ru/wp-content/uploads/2017/05/%D1%80%D0%B8%D0%BA%D1%80%D0%BE%D0%BB%D0%BB.png").openStream());
+                    iv.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            iv.setImageBitmap(bitmap);
+                        }
+                    });
+                } catch (Exception e) { e.printStackTrace(); }
+            };
+        };
+        t.start();
     }
-
-
-    private void peredacha2(Integer qq) {
-        Integer qqq = qq;
-        onProgressUpdate(qqq);
-    }
-
-
 }
-
