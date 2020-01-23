@@ -1,43 +1,92 @@
 package com.example.samsunghomework;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+public class MainActivity extends Activity implements SensorEventListener {
 
-import androidx.appcompat.app.AppCompatActivity;
+    //Объявляем картинку для компаса
+    private ImageView HeaderImage;
+    //Объявляем функцию поворота картинки
+    private float RotateDegree = 0f;
+    //Объявляем работу с сенсором устройства
+    private SensorManager mSensorManager;
+    //Объявляем объект TextView
+    TextView CompOrient;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final ImageView iv = new ImageView(this);
-        setContentView(iv);
-        Thread t = new Thread()  {
-            @Override
-            public void run() {
-                try {
-                    final Bitmap bitmap = BitmapFactory.decodeStream(new URL("https://memepedia.ru/wp-content/uploads/2017/05/%D1%80%D0%B8%D0%BA%D1%80%D0%BE%D0%BB%D0%BB.png").openStream());
-                    iv.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            iv.setImageBitmap(bitmap);
-                        }
-                    });
-                } catch (Exception e) { e.printStackTrace(); }
-            };
-        };
-        t.start();
+        setContentView(R.layout.activity_main);
+
+        //Связываем объект ImageView с нашим изображением:
+        HeaderImage = (ImageView) findViewById(R.id.CompassView);
+
+        //TextView в котором будет отображаться градус поворота:
+        CompOrient = (TextView) findViewById(R.id.Header);
+
+        //Инициализируем возможность работать с сенсором устройства:
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //Устанавливаем слушателя ориентации сенсора
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                SensorManager.SENSOR_DELAY_GAME);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //Останавливаем при надобности слушателя ориентации
+        //сенсора с целью сбережения заряда батареи:
+        mSensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+        //Получаем градус поворота от оси, которая направлена на север, север = 0 градусов:
+        float degree = Math.round(event.values[0]);
+        CompOrient.setText("Азимут: " + Float.toString(degree) + " градусов");
+
+        //Создаем анимацию вращения:
+        RotateAnimation rotateAnimation = new RotateAnimation(
+                RotateDegree,
+                -degree,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f);
+
+        //Продолжительность анимации в миллисекундах:
+        rotateAnimation.setDuration(200);
+
+        //Настраиваем анимацию после завершения подсчетных действий датчика:
+        rotateAnimation.setFillAfter(true);
+
+        //Запускаем анимацию:
+        HeaderImage.startAnimation(rotateAnimation);
+        RotateDegree = -degree;
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        //Этот метод не используется, но без него программа будет ругаться
     }
 }
