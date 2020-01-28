@@ -9,10 +9,10 @@ public class Task {
     {
         AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
         dlgAlert.setMessage(message);
-        dlgAlert.setTitle("Задание");
-        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.setTitle("ВЫ ПРОШЛИ ИГРУ");
+        dlgAlert.setPositiveButton("УРА", null);
         dlgAlert.setCancelable(true);
-        dlgAlert.setPositiveButton("Ok",
+        dlgAlert.setPositiveButton("УРА",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
