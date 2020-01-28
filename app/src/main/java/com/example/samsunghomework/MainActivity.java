@@ -1,92 +1,100 @@
-package com.example.samsunghomework;
+ package com.example.samsunghomework;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements SensorEventListener {
+import com.example.samsunghomework.R;
+import com.example.samsunghomework.Sit;
 
-    //Объявляем картинку для компаса
-    private ImageView HeaderImage;
-    //Объявляем функцию поворота картинки
-    private float RotateDegree = 0f;
-    //Объявляем работу с сенсором устройства
-    private SensorManager mSensorManager;
-    //Объявляем объект TextView
-    TextView CompOrient;
+import org.w3c.dom.Text;
 
+import javax.xml.transform.Result;
+
+public class MainActivity extends AppCompatActivity
+{
+    public TextView title, tZ, tE;
+    public Button but1, but2, but3;
+    public Sit current;
+    public int z, e;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Связываем объект ImageView с нашим изображением:
-        HeaderImage = (ImageView) findViewById(R.id.CompassView);
-
-        //TextView в котором будет отображаться градус поворота:
-        CompOrient = (TextView) findViewById(R.id.Header);
-
-        //Инициализируем возможность работать с сенсором устройства:
-        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        title = (TextView)findViewById(R.id.title);
+        but1 = (Button)findViewById(R.id.but1);
+        but2 = (Button)findViewById(R.id.but2);
+        but3 = (Button)findViewById(R.id.but3);
+        int next[] = { 2, 3, 43 };
+        current = new Sit(1, next);
+        e = 25;
+        z = 0;
+        setText();
     }
+    private void setText()
+    {
+        z += current.getZ();
+        e += current.getE();
+        title.setText(current.getTitle());
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        //Устанавливаем слушателя ориентации сенсора
-        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
-                SensorManager.SENSOR_DELAY_GAME);
+        if (current.getDeadlock())
+        {
+            but1.setText("");
+            but2.setText("");
+            but3.setText("");
+        }
+        else
+        {
+            but1.setText(current.getAction(0));
+            but2.setText(current.getAction(1));
+            but3.setText(current.getAction(2));
+        }
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-
-        //Останавливаем при надобности слушателя ориентации
-        //сенсора с целью сбережения заряда батареи:
-        mSensorManager.unregisterListener(this);
+    private void end(int s)
+    {
+        Intent i = new Intent(MainActivity.this, Result.class);
+        i.putExtra("end", Integer.toString(s));
+        startActivity(i);
     }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-
-        //Получаем градус поворота от оси, которая направлена на север, север = 0 градусов:
-        float degree = Math.round(event.values[0]);
-        CompOrient.setText("Азимут: " + Float.toString(degree) + " градусов");
-
-        //Создаем анимацию вращения:
-        RotateAnimation rotateAnimation = new RotateAnimation(
-                RotateDegree,
-                -degree,
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF,
-                0.5f);
-
-        //Продолжительность анимации в миллисекундах:
-        rotateAnimation.setDuration(200);
-
-        //Настраиваем анимацию после завершения подсчетных действий датчика:
-        rotateAnimation.setFillAfter(true);
-
-        //Запускаем анимацию:
-        HeaderImage.startAnimation(rotateAnimation);
-        RotateDegree = -degree;
-
+    public void click1(View view)
+    {
+        if (current.getDeadlock())
+        {
+            end(current.getId());
+        }
+        else
+        {
+            current = current.getNext(1);
+            setText();
+        }
     }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        //Этот метод не используется, но без него программа будет ругаться
+    public void click2(View view)
+    {
+        if (current.getDeadlock())
+        {
+            end(current.getId());
+        }
+        else
+        {
+            current = current.getNext(2);
+            setText();
+        }
+    }
+    public void click3(View view)
+    {
+        if (current.getDeadlock())
+        {
+            end(current.getId());
+        }
+        else
+        {
+            current = current.getNext(3);
+            setText();
+        }
     }
 }
