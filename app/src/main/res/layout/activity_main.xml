@@ -6,7 +6,7 @@
     android:background="#bbbbbb"
     android:orientation="horizontal">
 
-    <LinearLayout
+
         android:layout_width="430dp"
         android:layout_height="wrap_content">
 
@@ -46,22 +46,8 @@
             android:paddingTop="32sp"
             android:text="Лето"
             android:textColor="#FFFFFF" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/mmer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:drawablePadding="-15sp"
 
-            android:onClick="Summer"
-            android:paddingTop="32sp"
-            android:text="Лето"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+
 </LinearLayout>
