@@ -4,50 +4,102 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#bbbbbb"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/winter"
-        android:layout_width="192dp"
-        android:layout_height="183dp"
-        android:layout_alignParentRight="true"
-        android:layout_weight="2"
-        android:gravity="left|center_vertical"
-        android:onClick="Winter"
-        android:paddingTop="32sp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/snejinka"
-        android:text="Зима"
-        android:textColor="#FFFFFF" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/winter"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Winter"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/snejinka"
+            android:text="Зима"
+            android:textColor="#FFFFFF" />
 
 
-    <ImageButton
-        android:id="@+id/Middle"
-        android:layout_width="192dp"
-        android:layout_height="183dp"
-        android:layout_alignParentRight="true"
-        android:layout_weight="2"
-        android:gravity="left|center_vertical"
-        android:onClick="Middle"
-        android:paddingTop="32sp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/listok"
-        android:text="Весна/Осень"
-        android:textColor="#FFFFFF" />
+        <ImageButton
+            android:id="@+id/Middle"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Middle"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/listok"
+            android:text="Весна/Осень"
+            android:textColor="#FFFFFF" />
 
-    <ImageButton
-        android:id="@+id/Summer"
-        android:layout_width="192dp"
-        android:layout_height="183dp"
-        android:layout_alignParentRight="true"
-        android:layout_weight="2"
-        android:gravity="left|center_vertical"
-        android:onClick="Summer"
-        android:paddingTop="32sp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/unnamed"
-        android:text="Лето"
-        android:textColor="#FFFFFF" />
+        <ImageButton
+            android:id="@+id/Summer"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Summer"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/unnamed"
+            android:text="Лето"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/three"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Summer"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/three"
+            android:text="three"
+            android:textColor="#FFFFFF" />
+        <ImageButton
+            android:id="@+id/seven"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Summer"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/seven"
+            android:text="three"
+            android:textColor="#FFFFFF" />
+        <ImageButton
+            android:id="@+id/fourteen"
+            android:layout_width="192dp"
+            android:layout_height="183dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="2"
+            android:gravity="left|center_vertical"
+            android:onClick="Summer"
+            android:paddingTop="32sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/fourteen"
+            android:text="three"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton winter;
     ImageButton middle;
     ImageButton summer;
+    ImageButton three;
+    ImageButton seven;
+    ImageButton fourteen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         winter = (ImageButton) findViewById(R.id.winter);
         middle = (ImageButton) findViewById(Middle);
         summer = (ImageButton) findViewById(Summer);
-
+        three = (ImageButton) findViewById(R.id.three);
+        seven = (ImageButton) findViewById(R.id.seven);
+        fourteen = (ImageButton) findViewById(R.id.fourteen);
     }
 
 
@@ -75,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         galka = 1;
         curr = 3;
     }
-
 
 }
 
