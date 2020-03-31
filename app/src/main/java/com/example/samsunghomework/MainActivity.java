@@ -4,6 +4,7 @@ package com.example.samsunghomework;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,17 +12,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import static com.example.samsunghomework.R.id.*;
 
 public class MainActivity extends AppCompatActivity {
-    Button winter;
-    Button middle;
-    Button summer;
+    ImageButton winter;
+    ImageButton middle;
+    ImageButton summer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        winter = (Button) findViewById(R.id.winter);
-        middle = (Button) findViewById(Middle);
-        summer = (Button) findViewById(Summer);
+        winter = (ImageButton) findViewById(R.id.winter);
+        middle = (ImageButton) findViewById(Middle);
+        summer = (ImageButton) findViewById(Summer);
 
     }
 
