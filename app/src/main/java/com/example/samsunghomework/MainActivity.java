@@ -81,6 +81,55 @@ public class MainActivity extends AppCompatActivity {
         curr = 3;
     }
 
+    int galka2 = 0;
+    int curr2 = 0;
+
+    public void three(View view) {
+        if (galka2 == 0) three.setImageResource(R.drawable.galka);
+        else if (curr2 == 2) {
+            seven.setImageResource(R.drawable.seven);
+            three.setImageResource(R.drawable.galka);
+        }
+        if (curr2 == 3) {
+            fourteen.setImageResource(R.drawable.fourteen);
+            three.setImageResource(R.drawable.galka);
+        }
+        galka2 = 1;
+        curr2 = 1;
+
+    }
+
+    public void seven(View view) {
+        if (galka2 == 0) seven.setImageResource(R.drawable.galka);
+        else if (curr2 == 1) {
+            three.setImageResource(R.drawable.three);
+            seven.setImageResource(R.drawable.galka);
+        }
+        if (curr2 == 3) {
+            fourteen.setImageResource(R.drawable.fourteen);
+            seven.setImageResource(R.drawable.galka);
+        }
+        galka2 = 1;
+        curr2 = 2;
+
+    }
+
+    public void fourteen(View view) {
+        if (galka2 == 0) fourteen.setImageResource(R.drawable.galka);
+        else if (curr2 == 1) {
+            three.setImageResource(R.drawable.three);
+            fourteen.setImageResource(R.drawable.galka);
+        }
+
+        if (curr2 == 2) {
+            seven.setImageResource(R.drawable.seven);
+            fourteen.setImageResource(R.drawable.galka);
+
+        }
+        galka2 = 1;
+        curr2 = 3;
+
+    }
 }
 
 
