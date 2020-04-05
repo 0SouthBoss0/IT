@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         man = (ImageButton) findViewById(R.id.man);
         child = (ImageButton) findViewById(R.id.child);
         woman = (ImageButton) findViewById(R.id.woman);
-
+       man.setVisibility(View.INVISIBLE);
+        child.setVisibility(View.INVISIBLE);
+        woman.setVisibility(View.INVISIBLE);
     }
 
 
@@ -46,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
     int curr = 0;
 
     public void Winter(View view) {
-        //   mainlayout.removeAllViews();
+        man.setVisibility(View.VISIBLE);
+       child.setVisibility(View.VISIBLE);
+        woman.setVisibility(View.VISIBLE);
         if (galka == 0) winter.setImageResource(R.drawable.galka);
 
         else if (curr == 2) {
@@ -109,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
     public void Man(View view) {
         if (galka2 == 0) man.setImageResource(R.drawable.galka);
         else if (curr2 == 2) {
-            child.setImageResource(R.drawable.child);
+       //     child.setImageResource(R.drawable.child);
             man.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            woman.setImageResource(R.drawable.woman);
+       //     woman.setImageResource(R.drawable.woman);
             man.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -125,11 +129,11 @@ public class MainActivity extends AppCompatActivity {
     public void Child(View view) {
         if (galka2 == 0) child.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-            man.setImageResource(R.drawable.man);
+     //       man.setImageResource(R.drawable.man);
             child.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            woman.setImageResource(R.drawable.woman);
+      //      woman.setImageResource(R.drawable.woman);
             child.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -141,12 +145,12 @@ public class MainActivity extends AppCompatActivity {
     public void Woman(View view) {
         if (galka2 == 0) woman.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-            man.setImageResource(R.drawable.man);
+     //       man.setImageResource(R.drawable.man);
             woman.setImageResource(R.drawable.galka);
         }
 
         if (curr2 == 2) {
-            child.setImageResource(R.drawable.child);
+      //      child.setImageResource(R.drawable.child);
             woman.setImageResource(R.drawable.galka);
 
         }
@@ -155,8 +159,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-}
-
-
-
-
+}// winter.setVisibility(View.INVISIBLE);
