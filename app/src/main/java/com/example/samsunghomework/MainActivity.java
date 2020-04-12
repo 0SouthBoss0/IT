@@ -2,6 +2,7 @@ package com.example.samsunghomework;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout mainlayout;
 
 
-    EditText editText; //  String DNI = edittext.getText().toString();
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -246,32 +248,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CONTINUE() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Внимание!");
-        builder.setMessage("Вы уверены, что хотите продолжить?");
 
-        builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+        if (editText.length() != 0) {
+            String DAYSTRING = editText.getText().toString();
+            int DAY = Integer.parseInt(DAYSTRING);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            public void onClick(DialogInterface dialog, int which) {
-                // Do do my action here
+            builder.setTitle("Внимание!");
+            builder.setMessage("Вы уверены, что хотите продолжить?");
 
-                dialog.dismiss();
-            }
+            builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
 
-        });
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do do my action here
+                    Intent i = new Intent(MainActivity.this, Result.class);
+                    String eText = "information to send";
+                    i.putExtra("et", eText);
+                    startActivity(i);
+                }
 
-        builder.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+            });
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // I do not need any action here you might
-                dialog.dismiss();
-            }
-        });
+            builder.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
 
-        AlertDialog alert = builder.create();
-        alert.show();
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // I do not need any action here you might
+                    dialog.dismiss();
+                }
+            });
 
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Укажите число дней", Toast.LENGTH_SHORT);
+            toast.show();
+            //пляж сет имаге
+        }
     }
+
 }
