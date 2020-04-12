@@ -1,108 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    android:id="@+id/mainlayout"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#bbbbbb"
-    android:orientation="vertical">
+    android:id="@+id/scrool"
+    android:fillViewport="false">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:id="@+id/mainlayout"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="#bbbbbb"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/winter"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Winter"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/snejinka"
-            android:text="Зима"
-            android:textColor="#FFFFFF" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Количество дней" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/winter"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Winter"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/snejinka"
+                android:text="Зима"
+                android:textColor="#FFFFFF" />
 
 
-        <ImageButton
-            android:id="@+id/Middle"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Middle"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/listok"
-            android:text="Весна/Осень"
-            android:textColor="#FFFFFF" />
+            <ImageButton
+                android:id="@+id/Middle"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Middle"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/listok"
+                android:text="Весна/Осень"
+                android:textColor="#FFFFFF" />
 
-        <ImageButton
-            android:id="@+id/Summer"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Summer"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/unnamed"
-            android:text="Лето"
-            android:textColor="#FFFFFF" />
+            <ImageButton
+                android:id="@+id/Summer"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Summer"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/unnamed"
+                android:text="Лето"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/man"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Man"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/child"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Child"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/woman"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="Woman"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/turizm"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="turizm"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/komandirovka"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="komandirovka"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+
+            <ImageButton
+                android:id="@+id/plyazh"
+                android:layout_width="192dp"
+                android:layout_height="183dp"
+                android:layout_alignParentRight="true"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:onClick="plyazh"
+                android:paddingTop="32sp"
+                android:scaleType="fitCenter"
+
+
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <ImageButton
-            android:id="@+id/man"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Man"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-
-
-            android:textColor="#FFFFFF" />
-
-        <ImageButton
-            android:id="@+id/child"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Child"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-
-
-            android:textColor="#FFFFFF" />
-
-        <ImageButton
-            android:id="@+id/woman"
-            android:layout_width="192dp"
-            android:layout_height="183dp"
-            android:layout_alignParentRight="true"
-            android:layout_weight="2"
-            android:gravity="left|center_vertical"
-            android:onClick="Woman"
-            android:paddingTop="32sp"
-            android:scaleType="fitCenter"
-
-
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

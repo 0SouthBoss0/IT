@@ -1,14 +1,19 @@
 package com.example.samsunghomework;
 
 
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.samsunghomework.R.id.*;
@@ -20,12 +25,14 @@ public class MainActivity extends AppCompatActivity {
     ImageButton man;
     ImageButton child;
     ImageButton woman;
+    ImageButton turuzm;
+    ImageButton komandirovka;
+    ImageButton plyazh;
+    ScrollView scrollView;
     LinearLayout mainlayout;
 
 
-    ImageButton three;
-    ImageButton seven;
-    ImageButton fourteen;
+    EditText editText; //  String DNI = edittext.getText().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +45,19 @@ public class MainActivity extends AppCompatActivity {
         man = (ImageButton) findViewById(R.id.man);
         child = (ImageButton) findViewById(R.id.child);
         woman = (ImageButton) findViewById(R.id.woman);
-       man.setVisibility(View.INVISIBLE);
+        turuzm = (ImageButton) findViewById(turizm);
+        komandirovka = (ImageButton) findViewById(R.id.komandirovka);
+        plyazh = (ImageButton) findViewById(R.id.plyazh);
+        editText = (EditText) findViewById(R.id.editText);
+        scrollView = (ScrollView) findViewById(scrool);
+        scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
+        man.setVisibility(View.INVISIBLE);
         child.setVisibility(View.INVISIBLE);
         woman.setVisibility(View.INVISIBLE);
+        turuzm.setVisibility(View.INVISIBLE);
+        komandirovka.setVisibility(View.INVISIBLE);
+        plyazh.setVisibility(View.INVISIBLE);
+
     }
 
 
@@ -49,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Winter(View view) {
         man.setVisibility(View.VISIBLE);
-       child.setVisibility(View.VISIBLE);
+        child.setVisibility(View.VISIBLE);
         woman.setVisibility(View.VISIBLE);
         if (galka == 0) winter.setImageResource(R.drawable.galka);
 
@@ -77,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Middle(View view) {
+        man.setVisibility(View.VISIBLE);
+        child.setVisibility(View.VISIBLE);
+        woman.setVisibility(View.VISIBLE);
         if (galka == 0) middle.setImageResource(R.drawable.galka);
         else if (curr == 1) {
             winter.setImageResource(R.drawable.snejinka);
@@ -91,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Summer(View view) {
+        man.setVisibility(View.VISIBLE);
+        child.setVisibility(View.VISIBLE);
+        woman.setVisibility(View.VISIBLE);
         if (galka == 0) summer.setImageResource(R.drawable.galka);
         else if (curr == 1) {
             winter.setImageResource(R.drawable.snejinka);
@@ -111,13 +134,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Man(View view) {
+        turuzm.setVisibility(View.VISIBLE);
+        komandirovka.setVisibility(View.VISIBLE);
+        plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) man.setImageResource(R.drawable.galka);
         else if (curr2 == 2) {
-       //     child.setImageResource(R.drawable.child);
+            //     child.setImageResource(R.drawable.child);
             man.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-       //     woman.setImageResource(R.drawable.woman);
+            //     woman.setImageResource(R.drawable.woman);
             man.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -127,13 +153,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Child(View view) {
+        turuzm.setVisibility(View.VISIBLE);
+        komandirovka.setVisibility(View.VISIBLE);
+        plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) child.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-     //       man.setImageResource(R.drawable.man);
+            //       man.setImageResource(R.drawable.man);
             child.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-      //      woman.setImageResource(R.drawable.woman);
+            //      woman.setImageResource(R.drawable.woman);
             child.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -143,14 +172,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Woman(View view) {
+        turuzm.setVisibility(View.VISIBLE);
+        komandirovka.setVisibility(View.VISIBLE);
+        plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) woman.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-     //       man.setImageResource(R.drawable.man);
+            //       man.setImageResource(R.drawable.man);
             woman.setImageResource(R.drawable.galka);
         }
 
         if (curr2 == 2) {
-      //      child.setImageResource(R.drawable.child);
+            //      child.setImageResource(R.drawable.child);
             woman.setImageResource(R.drawable.galka);
 
         }
@@ -159,4 +191,87 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-}// winter.setVisibility(View.INVISIBLE);
+    int galka3 = 0;
+    int curr3 = 0;
+
+    public void turizm(View view) {
+        if (galka3 == 0) turuzm.setImageResource(R.drawable.galka);
+        else if (curr2 == 2) {
+            //    komandirovka.setImageResource(R.drawable.komandirovka);
+            turuzm.setImageResource(R.drawable.galka);
+        }
+        if (curr2 == 3) {
+            //     plyazh.setImageResource(R.drawable.plyazh);
+            turuzm.setImageResource(R.drawable.galka);
+        }
+        galka3 = 1;
+        curr3 = 1;
+
+        CONTINUE();
+    }
+
+
+    public void komandirovka(View view) {
+        if (galka3 == 0) komandirovka.setImageResource(R.drawable.galka);
+        else if (curr3 == 1) {
+            //      turizm.setImageResource(R.drawable.turizm);
+            komandirovka.setImageResource(R.drawable.galka);
+        }
+        if (curr3 == 3) {
+            //     plyazh.setImageResource(R.drawable.plyazh);
+            komandirovka.setImageResource(R.drawable.galka);
+        }
+        galka3 = 1;
+        curr3 = 2;
+
+        CONTINUE();
+    }
+
+    public void plyazh(View view) {
+        if (galka3 == 0) plyazh.setImageResource(R.drawable.galka);
+        else if (curr3 == 1) {
+            //       turizm.setImageResource(R.drawable.turizm);
+            plyazh.setImageResource(R.drawable.galka);
+        }
+
+        if (curr3 == 2) {
+            //     komandirovka.setImageResource(R.drawable.komandirovka);
+            plyazh.setImageResource(R.drawable.galka);
+
+        }
+        galka3 = 1;
+        curr3 = 3;
+
+        CONTINUE();
+    }
+
+    public void CONTINUE() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Внимание!");
+        builder.setMessage("Вы уверены, что хотите продолжить?");
+
+        builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+                // Do do my action here
+
+                dialog.dismiss();
+            }
+
+        });
+
+        builder.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // I do not need any action here you might
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
+    }
+}
