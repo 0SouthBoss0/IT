@@ -15,9 +15,9 @@ public class Result extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
-        text = (TextView) findViewById(R.id.qwert);
-
+        text = (TextView) findViewById(R.id.WELCOME);
         text.setText("Ваш чек-лист: ");
+
         int curr1 = getIntent().getExtras().getInt("curr1");
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");

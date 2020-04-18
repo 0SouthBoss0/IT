@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) man.setImageResource(R.drawable.galka);
         else if (curr2 == 2) {
-                child.setImageResource(R.drawable.child);
+            child.setImageResource(R.drawable.child);
             man.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) child.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-                   man.setImageResource(R.drawable.man);
+            man.setImageResource(R.drawable.man);
             child.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
@@ -186,12 +186,12 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) woman.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-                man.setImageResource(R.drawable.man);
+            man.setImageResource(R.drawable.man);
             woman.setImageResource(R.drawable.galka);
         }
 
         if (curr2 == 2) {
-                child.setImageResource(R.drawable.child);
+            child.setImageResource(R.drawable.child);
             woman.setImageResource(R.drawable.galka);
 
         }
@@ -265,7 +265,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Error: ошибка в написании числа дней", Toast.LENGTH_SHORT);
+
                 toast.show();
+                turuzm.setImageResource(R.drawable.turizm);
+                komandirovka.setImageResource(R.drawable.komandirovka);
+                plyazh.setImageResource(R.drawable.plyazh);
                 editText.setText("");
                 alo = 1;
             }
