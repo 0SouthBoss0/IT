@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     int galka = 0;
     int curr = 0;
+    int alo = 0;
 
     public void Winter(View view) {
         man.setVisibility(View.VISIBLE);
@@ -208,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
         }
         galka3 = 1;
         curr3 = 1;
-
+        alo = 0;
         CONTINUE();
     }
 
@@ -225,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
         }
         galka3 = 1;
         curr3 = 2;
-
+        alo = 0;
         CONTINUE();
     }
 
@@ -243,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
         }
         galka3 = 1;
         curr3 = 3;
-
+        alo = 0;
         CONTINUE();
     }
 
@@ -251,37 +252,50 @@ public class MainActivity extends AppCompatActivity {
 
 
         if (editText.length() != 0) {
+
+
             String DAYSTRING = editText.getText().toString();
-            int DAY = Integer.parseInt(DAYSTRING);
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            builder.setTitle("Внимание!");
-            builder.setMessage("Вы уверены, что хотите продолжить?");
+            try {
+                int DAY = Integer.parseInt(DAYSTRING);
+            } catch (Exception e) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Error: ошибка в написании числа дней", Toast.LENGTH_SHORT);
+                toast.show();
+                editText.setText("");
+                alo = 1;
+            }
 
-            builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+            if (alo == 0) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-                public void onClick(DialogInterface dialog, int which) {
-                    // Do do my action here
-                    Intent i = new Intent(MainActivity.this, Result.class);
-                    String eText = "information to send";
-                    i.putExtra("et", eText);
-                    startActivity(i);
-                }
+                builder.setTitle("Внимание!");
+                builder.setMessage("Вы уверены, что хотите продолжить?");
 
-            });
+                builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
 
-            builder.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do do my action here
+                        Intent i = new Intent(MainActivity.this, Result.class);
+                        String eText = "information to send";
+                        i.putExtra("et", eText);
+                        startActivity(i);
+                    }
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // I do not need any action here you might
-                    dialog.dismiss();
-                }
-            });
+                });
 
-            AlertDialog alert = builder.create();
-            alert.show();
+                builder.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
 
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // I do not need any action here you might
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
         } else {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Укажите число дней", Toast.LENGTH_SHORT);
