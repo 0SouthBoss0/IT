@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         scrollView = (ScrollView) findViewById(scrool);
         scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
+
         man.setVisibility(View.INVISIBLE);
         child.setVisibility(View.INVISIBLE);
         woman.setVisibility(View.INVISIBLE);
@@ -63,70 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public int getGalka() {
-        return galka;
-    }
-
-    public void setGalka(int galka) {
-        this.galka = galka;
-    }
-
-    public int getCurr() {
-        return curr;
-    }
-
-    public void setCurr(int curr) {
-        this.curr = curr;
-    }
-
-    public int getAlo() {
-        return alo;
-    }
-
-    public void setAlo(int alo) {
-        this.alo = alo;
-    }
-
-    public int getDAY() {
-        return DAY;
-    }
-
-    public void setDAY(int DAY) {
-        this.DAY = DAY;
-    }
-
-    public int getGalka3() {
-        return galka3;
-    }
-
-    public void setGalka3(int galka3) {
-        this.galka3 = galka3;
-    }
-
-    public int getCurr3() {
-        return curr3;
-    }
-
-    public void setCurr3(int curr3) {
-        this.curr3 = curr3;
-    }
-
-    public int getGalka2() {
-        return galka2;
-    }
-
-    public void setGalka2(int galka2) {
-        this.galka2 = galka2;
-    }
-
-    public int getCurr2() {
-        return curr2;
-    }
-
-    public void setCurr2(int curr2) {
-        this.curr2 = curr2;
-    }
 
     int galka = 0;
     int alo = 0;
@@ -211,11 +148,11 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) man.setImageResource(R.drawable.galka);
         else if (curr2 == 2) {
-            //     child.setImageResource(R.drawable.child);
+                child.setImageResource(R.drawable.child);
             man.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            //     woman.setImageResource(R.drawable.woman);
+            woman.setImageResource(R.drawable.womanqqq);
             man.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -230,11 +167,11 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) child.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-            //       man.setImageResource(R.drawable.man);
+                   man.setImageResource(R.drawable.man);
             child.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            //      woman.setImageResource(R.drawable.woman);
+            woman.setImageResource(R.drawable.womanqqq);
             child.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -249,12 +186,12 @@ public class MainActivity extends AppCompatActivity {
         plyazh.setVisibility(View.VISIBLE);
         if (galka2 == 0) woman.setImageResource(R.drawable.galka);
         else if (curr2 == 1) {
-            //       man.setImageResource(R.drawable.man);
+                man.setImageResource(R.drawable.man);
             woman.setImageResource(R.drawable.galka);
         }
 
         if (curr2 == 2) {
-            //      child.setImageResource(R.drawable.child);
+                child.setImageResource(R.drawable.child);
             woman.setImageResource(R.drawable.galka);
 
         }
@@ -263,15 +200,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /////////////////////////////////////////////////////////////
     public void turizm(View view) {
         if (galka3 == 0) turuzm.setImageResource(R.drawable.galka);
         else if (curr2 == 2) {
-            //    komandirovka.setImageResource(R.drawable.komandirovka);
+            komandirovka.setImageResource(R.drawable.komandirovka);
             turuzm.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            //     plyazh.setImageResource(R.drawable.plyazh);
+            plyazh.setImageResource(R.drawable.plyazh);
             turuzm.setImageResource(R.drawable.galka);
         }
         galka3 = 1;
@@ -284,11 +221,11 @@ public class MainActivity extends AppCompatActivity {
     public void komandirovka(View view) {
         if (galka3 == 0) komandirovka.setImageResource(R.drawable.galka);
         else if (curr3 == 1) {
-            //      turizm.setImageResource(R.drawable.turizm);
+            turuzm.setImageResource(R.drawable.turizm);
             komandirovka.setImageResource(R.drawable.galka);
         }
         if (curr3 == 3) {
-            //     plyazh.setImageResource(R.drawable.plyazh);
+            plyazh.setImageResource(R.drawable.plyazh);
             komandirovka.setImageResource(R.drawable.galka);
         }
         galka3 = 1;
@@ -300,12 +237,12 @@ public class MainActivity extends AppCompatActivity {
     public void plyazh(View view) {
         if (galka3 == 0) plyazh.setImageResource(R.drawable.galka);
         else if (curr3 == 1) {
-            //       turizm.setImageResource(R.drawable.turizm);
+            turuzm.setImageResource(R.drawable.turizm);
             plyazh.setImageResource(R.drawable.galka);
         }
 
         if (curr3 == 2) {
-            //     komandirovka.setImageResource(R.drawable.komandirovka);
+            komandirovka.setImageResource(R.drawable.komandirovka);
             plyazh.setImageResource(R.drawable.galka);
 
         }
@@ -358,7 +295,9 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // I do not need any action here you might
+                        turuzm.setImageResource(R.drawable.turizm);
+                        komandirovka.setImageResource(R.drawable.komandirovka);
+                        plyazh.setImageResource(R.drawable.plyazh);
                         dialog.dismiss();
                     }
                 });
@@ -370,7 +309,9 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Укажите число дней", Toast.LENGTH_SHORT);
             toast.show();
-            //пляж сет имаге
+            turuzm.setImageResource(R.drawable.turizm);
+            komandirovka.setImageResource(R.drawable.komandirovka);
+            plyazh.setImageResource(R.drawable.plyazh);
         }
     }
 
