@@ -107,6 +107,36 @@
 
             android:text="   Личная гигиена:"
             android:textSize="15sp" />
+        <CheckBox
+            android:id="@+id/dop6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <CheckBox
+            android:id="@+id/dop7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <CheckBox
+            android:id="@+id/dop8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <CheckBox
+            android:id="@+id/dop9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <CheckBox
+            android:id="@+id/dop10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
 
     </LinearLayout>
 </ScrollView>
