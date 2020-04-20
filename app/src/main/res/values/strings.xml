@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">КВЕСТ HARD</string>
+    <string name="app_name">VOYAGE</string>
+    <string name="callback" />
 
 
 </resources>
