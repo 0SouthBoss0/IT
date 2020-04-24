@@ -1,7 +1,9 @@
 package com.example.samsunghomework;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -239,6 +241,17 @@ public class Result extends AppCompatActivity {
                 //пляж
             }
         }
+
+
+    }
+//
+    public void ALO(View view) {
+
+        LinearLayout ll = new LinearLayout(this);
+        ll = (LinearLayout) findViewById(R.id.qqqqqqqq);
+        CheckBox cb = new CheckBox(getApplicationContext());
+        cb.setText("Новая вещь");
+        ll.addView(cb);
 
 
     }

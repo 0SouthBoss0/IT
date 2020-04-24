@@ -284,14 +284,19 @@ public class MainActivity extends AppCompatActivity {
 
                     public void onClick(DialogInterface dialog, int which) {
                         // Do do my action here
-                        Intent i = new Intent(MainActivity.this, Result.class);
+
+                        Intent i = new Intent(MainActivity.this, DynamicResult.class);
 
                         i.putExtra("curr1", curr);
                         i.putExtra("curr2", curr2);
                         i.putExtra("curr3", curr3);
                         i.putExtra("DAY", DAY);
+
                         startActivity(i);
+
+
                     }
+
 
                 });
 
