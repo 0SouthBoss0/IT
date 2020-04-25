@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class DynamicResult extends ListActivity {
 
@@ -28,7 +28,7 @@ public class DynamicResult extends ListActivity {
             myArr.add("Нижнее белье: " + DAY + " шт.");
             myArr.add("Носки: " + DAY + " шт.");
             if (curr1 == 1) {
-                myArr.add("Теплая непромокаемая куртка: 1 шт.");
+                myArr.add("Теплая непромокаемая куртка");
                 myArr.add("Шарф, перчатки: 1 пара");
                 myArr.add("Термобелье: 1 шт.");
                 myArr.add("Теплые штаны: 1 шт.");
@@ -45,16 +45,25 @@ public class DynamicResult extends ListActivity {
             }
 
             if (curr3 == 1) {
-                //туризм
+                myArr.add("Лёгкий рюкзак");
+                myArr.add("Нож");
+                myArr.add("Носовые платки: 1 упаковка");
+                myArr.add("Лейкопластырь");
+                myArr.add("Средство от насекомых: 1 шт.");
+                myArr.add("Бутылка для воды: 1 шт.");
+                myArr.add("Фонарик");
+                myArr.add("Фотоаппарат + карта памяти");
+                myArr.add("Наушники");
+
             }
 
 
             if (curr1 == 2) {
-                myArr.add("Непромокаемая куртка с капюшоном: 1 шт.");
+                myArr.add("Непромокаемая куртка с капюшоном");
                 myArr.add("Шарф, перчатки: 1 пара");
                 myArr.add("Теплые штаны: 1 шт.");
                 myArr.add("Теплая обувь: 1 пара");
-                myArr.add("Зонт: 1 шт.");
+                myArr.add("Зонт");
             }
             if (curr2 == 2) {
                 myArr.add("Футболка с длинным рукавом: " + DAY + " шт.");
@@ -64,14 +73,20 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Подгузники: 1 упаковка");
             }
             if (curr3 == 2) {
-                //командировка
+                myArr.add("Лёгкий рюкзак");
+                myArr.add("Крем для обуви");
+                myArr.add("Визитки");
+                myArr.add("Блокнот и ручка");
+                myArr.add("Бутылка для воды: 1 шт.");
+
+
             }
             if (curr1 == 3) {
                 myArr.add("Шорты: " + DAY + " шт.");
                 myArr.add("Купальный костюм: 2 шт.");
                 myArr.add("Сланцы: 1 пара");
                 myArr.add("Кроссовки: 1 пара");
-                myArr.add("Солнцезащитные очки: 1 шт");
+                myArr.add("Солнцезащитные очки");
             }
 
             if (curr2 == 3) {
@@ -82,16 +97,19 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Кофта/джемпер: 2 шт.");
             }
             if (curr3 == 3) {
-                //пляж
+                myArr.add("Пляжное полотенце");
+                myArr.add("Солнцезащитный крем");
+                myArr.add("Мяч для пляжного волейбола");
+                myArr.add("Снаряжение для подводного плавания");
             }
 
 
         }
         if (DAY > 3 && DAY <= 10) { //СТИРКА
-            myArr.add("Нижнее белье " + (int) Math.round(DAY / 2) + " шт.");
-            myArr.add("Носки " + (int) Math.round(DAY / 2) + " шт.");
+            myArr.add("Нижнее белье: " + (int) Math.round(DAY / 2) + " шт.");
+            myArr.add("Носки: " + (int) Math.round(DAY / 2) + " шт.");
             if (curr1 == 1) {
-                myArr.add("Теплая непромокаемая куртка: 1 шт.");
+                myArr.add("Теплая непромокаемая куртка");
                 myArr.add("Шарф, перчатки: 2 пары");
                 myArr.add("Термобелье: 2 шт.");
                 myArr.add("Теплые штаны: 2 шт.");
@@ -99,7 +117,7 @@ public class DynamicResult extends ListActivity {
             }
             if (curr2 == 1) {
                 myArr.add("Рубашка: 3 шт.");
-                myArr.add("Футболка: " + Math.round((DAY / 2) + 1) + " шт.");
+                myArr.add("Футболка: " + Math.round((DAY / 3)) + " шт.");
                 myArr.add("Кофта/джемпер: 3 шт.");
                 myArr.add("Тапочки: 1 пара");
                 myArr.add("Брюки+ремень: 2 шт.");
@@ -108,16 +126,24 @@ public class DynamicResult extends ListActivity {
             }
 
             if (curr3 == 1) {
-                //туризм
+                myArr.add("Рюкзак");
+                myArr.add("Нож");
+                myArr.add("Носовые платки: 1 упаковка");
+                myArr.add("Лейкопластырь");
+                myArr.add("Средство от насекомых: 2 шт.");
+                myArr.add("Бутылка для воды: 2 шт.");
+                myArr.add("Фонарик");
+                myArr.add("Фотоаппарат + карта памяти");
+                myArr.add("Наушники");
             }
 
 
             if (curr1 == 2) {
-                myArr.add("Непромокаемая куртка с капюшоном: 1 шт.");
+                myArr.add("Непромокаемая куртка с капюшоном");
                 myArr.add("Шарф, перчатки: 1 пара");
                 myArr.add("Теплые штаны: 2 шт.");
                 myArr.add("Теплая обувь: 2 пары");
-                myArr.add("Зонт: 1 шт.");
+                myArr.add("Зонт");
             }
             if (curr2 == 2) {
                 myArr.add("Футболка с длинным рукавом: " + Math.round((DAY / 2) + 1) + " шт.");
@@ -127,14 +153,18 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Подгузники: 1 упаковка");
             }
             if (curr3 == 2) {
-                //командировка
+                myArr.add("Рюкзак");
+                myArr.add("Крем для обуви");
+                myArr.add("Визитки");
+                myArr.add("Блокнот и ручка");
+                myArr.add("Бутылка для воды: 2 шт.");
             }
             if (curr1 == 3) {
-                myArr.add("Шорты: " + DAY + " шт.");
+                myArr.add("Шорты: " + Math.round((DAY / 2) + 1) + " шт.");
                 myArr.add("Купальный костюм: 2 шт.");
                 myArr.add("Сланцы: 1 пара");
                 myArr.add("Кроссовки: 2 пары");
-                myArr.add("Солнцезащитные очки: 1 шт");
+                myArr.add("Солнцезащитные очки");
             }
 
             if (curr2 == 3) {
@@ -145,7 +175,11 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Кофта/джемпер: 3 шт.");
             }
             if (curr3 == 3) {
-                //пляж
+                myArr.add("Пляжное полотенце");
+                myArr.add("Солнцезащитный крем");
+                myArr.add("Мяч для пляжного волейбола");
+                myArr.add("Снаряжение для подводного плавания");
+                myArr.add("Зонт от солнца");
             }
 
         }
@@ -155,7 +189,7 @@ public class DynamicResult extends ListActivity {
             myArr.add("Нижнее белье: 7 шт.");
             myArr.add("Носки: 7 пар");
             if (curr1 == 1) {
-                myArr.add("Теплая непромокаемая куртка: 1 шт.");
+                myArr.add("Теплая непромокаемая куртка");
                 myArr.add("Шарф, перчатки: 2 пары");
                 myArr.add("Термобелье: 3 шт.");
                 myArr.add("Теплые штаны: 2 шт.");
@@ -172,16 +206,24 @@ public class DynamicResult extends ListActivity {
             }
 
             if (curr3 == 1) {
-                //туризм
+                myArr.add("Рюкзак");
+                myArr.add("Нож");
+                myArr.add("Носовые платки: 1 упаковка");
+                myArr.add("Лейкопластырь");
+                myArr.add("Средство от насекомых: 2 шт.");
+                myArr.add("Бутылка для воды: 2 шт.");
+                myArr.add("Фонарик");
+                myArr.add("Фотоаппарат + карта памяти");
+                myArr.add("Наушники");
             }
 
 
             if (curr1 == 2) {
-                myArr.add("Непромокаемая куртка с капюшоном: 1 шт.");
+                myArr.add("Непромокаемая куртка с капюшоном");
                 myArr.add("Шарф, перчатки: 1 пара");
                 myArr.add("Теплые штаны: 1 шт.");
                 myArr.add("Теплая обувь: 2 пары");
-                myArr.add("Зонт: 1 шт.");
+                myArr.add("Зонт");
             }
             if (curr2 == 2) {
                 myArr.add("Футболка с длинным рукавом: 4 шт.");
@@ -191,14 +233,18 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Подгузники: 1 упаковка");
             }
             if (curr3 == 2) {
-                //командировка
+                myArr.add("Рюкзак");
+                myArr.add("Крем для обуви");
+                myArr.add("Визитки");
+                myArr.add("Блокнот и ручка");
+                myArr.add("Бутылка для воды: 2 шт.");
             }
             if (curr1 == 3) {
                 myArr.add("Шорты: 3 шт.");
                 myArr.add("Купальный костюм: 2 шт.");
                 myArr.add("Сланцы: 1 пара");
                 myArr.add("Кроссовки: 2 пары");
-                myArr.add("Солнцезащитные очки: 1 шт");
+                myArr.add("Солнцезащитные очки");
             }
 
             if (curr2 == 3) {
@@ -209,7 +255,11 @@ public class DynamicResult extends ListActivity {
                 myArr.add("Кофта/джемпер: 2 шт.");
             }
             if (curr3 == 3) {
-                //пляж
+                myArr.add("Пляжное полотенце");
+                myArr.add("Солнцезащитный крем");
+                myArr.add("Мяч для пляжного волейбола");
+                myArr.add("Снаряжение для подводного плавания");
+                myArr.add("Зонт от солнца");
             }
         }
 
@@ -225,7 +275,7 @@ public class DynamicResult extends ListActivity {
         l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
-               myArr.add("Новая вещь");
+                myArr.add("Новая вещь");
                 monthAdapter.notifyDataSetInvalidated();
                 return true;
             }
@@ -239,9 +289,20 @@ public class DynamicResult extends ListActivity {
             monthAdapter.notifyDataSetInvalidated();
 
         }
-
+        int counter = 0;
+        for (int i = 0; i < myArr.size(); i++) {
+            String qq = (String) getListAdapter().getItem(i);
+            String ll = (String) myArr.get(i), subb = "✔";
+            if (ll.indexOf(subb) != -1) {
+                counter++;
+            }
+        }
+        if (counter == myArr.size()) {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Счастливой поездки!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
-
 
 }
 

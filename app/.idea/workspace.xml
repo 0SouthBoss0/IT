@@ -19,26 +19,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da05a70f-0cb8-4d24-91c0-9406a85f8986" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_http_legacy_android_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_gradle_gradle_core_2_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/GetAccessToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/GetUserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/SetToServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/VK_User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/auth.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/auth_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Task.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/result.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/result.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="228" column="56" selection-start-line="228" selection-start-column="56" selection-end-line="228" selection-end-column="56" />
+            <state relative-caret-position="481">
+              <caret line="301" column="62" lean-forward="true" selection-start-line="301" selection-start-column="62" selection-end-line="301" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,19 +57,19 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="308">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
             </state>
           </provider>
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="85">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer2" />
@@ -94,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="342">
+              <caret line="320" column="25" lean-forward="true" selection-start-line="318" selection-start-column="11" selection-end-line="320" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -152,13 +136,13 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/result.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Result.java" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTITEM.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTSEL.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/ItemSelectedAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" />
       </list>
     </option>
@@ -175,6 +159,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="samsunghomework" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,49 +218,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="samsunghomework" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,7 +393,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20437019" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20437019" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -434,13 +402,13 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49421594" weight="0.25841185" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" visible="true" weight="0.4602961" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" visible="true" weight="0.15477793" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49871466" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.29820052" side_tool="true" weight="0.34589502" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4993573" weight="0.32974428" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7017995" weight="0.34589502" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7017995" weight="0.0807537" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49946696" weight="0.25135428" />
       <window_info anchor="bottom" id="Inspection Results" order="10" sideWeight="0.4993573" weight="0.32974428" />
@@ -630,106 +598,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTSEL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-            <element signature="e#900#901#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTITEM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <element signature="e#325#326#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-            <element signature="e#490#491#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/ItemSelectedAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1020#1021#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#2113#2114#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTSEL.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/TESTITEM.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/Item.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/ItemSelectedAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/test/MainActivity.java" />
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/result.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -740,24 +613,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="85">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        <state relative-caret-position="308">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4114">
+          <caret line="242" column="9" lean-forward="true" selection-start-line="242" selection-start-column="9" selection-end-line="242" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="320" column="25" lean-forward="true" selection-start-line="318" selection-start-column="11" selection-end-line="320" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="228" column="56" selection-start-line="228" selection-start-column="56" selection-end-line="228" selection-end-column="56" />
+        <state relative-caret-position="481">
+          <caret line="301" column="62" lean-forward="true" selection-start-line="301" selection-start-column="62" selection-end-line="301" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
