@@ -2,6 +2,10 @@ package com.example.samsunghomework;
 
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -266,8 +270,38 @@ public class DynamicResult extends ListActivity {
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
         setListAdapter(monthAdapter);
+        registerForContextMenu(getListView());
+
+    }
 
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.edit:
+                editItem(info.position); // метод, выполняющий действие при редактировании пункта меню
+                return true;
+            case R.id.delete:
+                deleteItem(info.position); //метод, выполняющий действие при удалении пункта меню
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void editItem(int position) {
+    }
+
+    private void deleteItem(int position) {
     }
 
     @Override
@@ -275,10 +309,16 @@ public class DynamicResult extends ListActivity {
         l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
+////////////////////////////////////////////////////////////////////////////////////////////////
+                openContextMenu(l);
+
+////////////////////////////////////////////////////////////////////////////////////////////////
                 myArr.add("Новая вещь");
                 monthAdapter.notifyDataSetInvalidated();
                 return true;
             }
+
+
         });
         String month = (String) getListAdapter().getItem(position);
         String element = (String) myArr.get(position), sub = "✔";
