@@ -293,33 +293,30 @@ public class DynamicResult extends ListActivity {
             case R.id.delete:
                 deleteItem(info.position); //метод, выполняющий действие при удалении пункта меню
                 return true;
+            case R.id.add:
+                addItem(info.position); //метод, выполняющий действие при удалении пункта меню
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
 
+    private void addItem(int position) {
+
+    }
+
     private void editItem(int position) {
+
     }
 
     private void deleteItem(int position) {
+        myArr.remove(position);
+        monthAdapter.notifyDataSetInvalidated();
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id) {
-////////////////////////////////////////////////////////////////////////////////////////////////
-                openContextMenu(l);
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-                myArr.add("Новая вещь");
-                monthAdapter.notifyDataSetInvalidated();
-                return true;
-            }
-
-
-        });
         String month = (String) getListAdapter().getItem(position);
         String element = (String) myArr.get(position), sub = "✔";
 
@@ -342,7 +339,21 @@ public class DynamicResult extends ListActivity {
                     "Счастливой поездки!", Toast.LENGTH_SHORT);
             toast.show();
         }
+
     }
 
+    public void onqq(ListView l, View v, int position, long id) {
+        l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id1) {
+////////////////////////////////////////////////////////////////////////////////////////////////
+                DynamicResult.this.openContextMenu(l);
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+                return true;
+            }
+        });
+    }
 }
 
