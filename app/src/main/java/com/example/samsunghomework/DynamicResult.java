@@ -1,6 +1,8 @@
 package com.example.samsunghomework;
 
+import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -9,8 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
 
@@ -303,14 +308,66 @@ public class DynamicResult extends ListActivity {
 
     private void addItem(int position) {
 
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Введите Вашу новую вещь");
+
+        // alert.setMessage("Message");
+
+        final EditText input = new EditText(this);
+
+        alert.setView(input);
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String qq = input.getText().toString();
+                myArr.add(qq);
+                monthAdapter.notifyDataSetInvalidated();
+
+            }
+        });
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+        alert.show();
+
+
+        /////////////////////
     }
 
-    private void editItem(int position) {
 
+    private void editItem(int position) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Введите Вашу изменённую вещь");
+
+        // alert.setMessage("Message");
+
+        final EditText input = new EditText(this);
+
+        alert.setView(input);
+        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String qq = input.getText().toString();
+                myArr.set(position, (qq));
+
+                monthAdapter.notifyDataSetInvalidated();
+
+            }
+        });
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+        alert.show();
+
+
+        /////////////////////
     }
 
     private void deleteItem(int position) {
         myArr.remove(position);
+
         monthAdapter.notifyDataSetInvalidated();
     }
 
