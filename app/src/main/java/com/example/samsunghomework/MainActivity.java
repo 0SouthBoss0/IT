@@ -4,21 +4,22 @@ package com.example.samsunghomework;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.example.samsunghomework.R.id.*;
+import static com.example.samsunghomework.R.id.Middle;
+import static com.example.samsunghomework.R.id.Summer;
+import static com.example.samsunghomework.R.id.scrool;
+import static com.example.samsunghomework.R.id.turizm;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton winter;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         scrollView = (ScrollView) findViewById(scrool);
         scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
-
+        editText.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_ATOP);
         man.setVisibility(View.INVISIBLE);
         child.setVisibility(View.INVISIBLE);
         woman.setVisibility(View.INVISIBLE);
@@ -284,14 +285,19 @@ public class MainActivity extends AppCompatActivity {
 
                     public void onClick(DialogInterface dialog, int which) {
                         // Do do my action here
-                        Intent i = new Intent(MainActivity.this, Result.class);
+
+                        Intent i = new Intent(MainActivity.this, DynamicResult.class);
 
                         i.putExtra("curr1", curr);
                         i.putExtra("curr2", curr2);
                         i.putExtra("curr3", curr3);
                         i.putExtra("DAY", DAY);
+
                         startActivity(i);
+
+
                     }
+
 
                 });
 

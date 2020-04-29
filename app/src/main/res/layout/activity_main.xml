@@ -3,6 +3,7 @@
     android:id="@+id/scrool"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#bbbbbb"
     android:fillViewport="false">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,10 +15,13 @@
         android:background="#bbbbbb"
         android:orientation="vertical">
 
+
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="italic"
             android:ems="10"
             android:hint="Количество дней" />
 
@@ -86,7 +90,7 @@
                 android:onClick="Man"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-android:src="@drawable/man"
+                android:src="@drawable/man"
 
                 android:textColor="#FFFFFF" />
 
@@ -101,7 +105,7 @@ android:src="@drawable/man"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
 
-android:src="@drawable/child"
+                android:src="@drawable/child"
                 android:textColor="#FFFFFF" />
 
             <ImageButton
@@ -147,9 +151,9 @@ android:src="@drawable/child"
                 android:layout_weight="2"
                 android:gravity="left|center_vertical"
                 android:onClick="komandirovka"
-                android:src="@drawable/komandirovka"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
+                android:src="@drawable/komandirovka"
 
 
                 android:textColor="#FFFFFF" />
@@ -169,6 +173,15 @@ android:src="@drawable/child"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
-
+        <TextView
+            android:id="@+id/created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="end"
+            android:text="created by SouthBoss"
+            android:textColor="#23282b"
+            android:textSize="10dp" />
     </LinearLayout>
+
 </ScrollView>

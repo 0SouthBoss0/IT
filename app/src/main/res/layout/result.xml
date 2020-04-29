@@ -6,8 +6,8 @@
     android:fillViewport="false">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
 
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -19,86 +19,98 @@
             android:text="Ваш чек-лист:"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/odejda"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:text="   Вещи:"
-            android:textSize="15sp" />
-
-        <CheckBox
-            android:id="@+id/trusi"
+        <LinearLayout
+            android:id="@+id/qqqqqqqq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:orientation="vertical">
 
-        <CheckBox
-            android:id="@+id/rubaha"
+            <TextView
+                android:id="@+id/odejda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="   Вещи:"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/trusi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/rubaha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/footbalka"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+
+            <CheckBox
+                android:id="@+id/nocki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/bruki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/kofta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/obuv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/dop1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/dop2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/dop3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/dop4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <CheckBox
+                android:id="@+id/dop5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/footbalka"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-
-        <CheckBox
-            android:id="@+id/nocki"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/bruki"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/kofta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/obuv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/dop1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/dop2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/dop3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/dop4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
-
-        <CheckBox
-            android:id="@+id/dop5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="" />
+            android:onClick="ALO" />
 
         <TextView
             android:id="@+id/gigiena"
@@ -107,6 +119,7 @@
 
             android:text="   Личная гигиена:"
             android:textSize="15sp" />
+
         <CheckBox
             android:id="@+id/dop6"
             android:layout_width="wrap_content"
