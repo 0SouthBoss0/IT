@@ -172,16 +172,7 @@
                 android:src="@drawable/plyazh"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/created"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="end"
-            android:text="created by SouthBoss"
-            android:textColor="#23282b"
-            android:textSize="10dp" />
+        
     </LinearLayout>
 
 </ScrollView>
