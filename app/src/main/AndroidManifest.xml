@@ -23,7 +23,9 @@
 
 
 
-        <activity android:name=".DynamicResult">
+        <activity
+
+            android:name=".DynamicResult">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>

@@ -26,10 +26,11 @@ public class DynamicResult extends ListActivity {
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //      setTheme(android.R.style.Theme_DeviceDefault);
+        // setTheme(android.R.style.Theme_Material_Light);
         int curr1 = getIntent().getExtras().getInt("curr1");
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");
@@ -276,6 +277,7 @@ public class DynamicResult extends ListActivity {
 
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
+
         setListAdapter(monthAdapter);
         registerForContextMenu(getListView());
 
@@ -366,38 +368,43 @@ public class DynamicResult extends ListActivity {
         alert.setTitle("Введите новое количество");
 
 
-        alert.setMessage("При единичном значинии оставьте поле пустым");
+        alert.setMessage("При единичном значении оставьте поле пустым");
 
         final EditText input = new EditText(this);
 
         alert.setView(input);
-        alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 String qq = input.getText().toString();
 
                 if (input.length() == 0) {
-                    int index = myArr.get(position).indexOf(":");
-                    myArr.set(position, (myArr.get(position).substring(0, index)));
+                    if (myArr.get(position).contains(":")) {
+                        int index = myArr.get(position).indexOf(":");
+                        myArr.set(position, (myArr.get(position).substring(0, index)));
+                    } else {
+                    }
                     monthAdapter.notifyDataSetInvalidated();
 
 
                 } else {
-
-                    int index = myArr.get(position).indexOf(":");
-                    try {
-                        myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq);
-                    } catch (Exception e) {
-                        myArr.set(position, qq);
+                    if (myArr.get(position).contains(":")) {
+                        int index = myArr.get(position).indexOf(":");
+                        try {
+                            myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq);
+                        } catch (Exception e) {
+                            myArr.set(position, qq);
+                        }
+                    } else {
+                        myArr.set(position, myArr.get(position) + ": " + qq);
                     }
-
                     monthAdapter.notifyDataSetInvalidated();
                 }
             }
         });
 
 
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alert.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
             }
