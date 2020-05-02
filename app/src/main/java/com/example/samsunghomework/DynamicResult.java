@@ -195,8 +195,6 @@ public class DynamicResult extends ListActivity {
             }
 
         }
-
-
         if (DAY > 10) {
             myArr.add("Нижнее белье: 7 шт.");
             myArr.add("Носки: 7 пар");
@@ -277,7 +275,6 @@ public class DynamicResult extends ListActivity {
 
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
-
         setListAdapter(monthAdapter);
         registerForContextMenu(getListView());
 
@@ -324,7 +321,7 @@ public class DynamicResult extends ListActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.add:
-                addItem(); // метод, выполняющий действие при редактировании пункта меню
+                addItem();
                 return true;
 
             default:
