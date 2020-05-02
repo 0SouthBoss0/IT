@@ -16,18 +16,19 @@
         android:orientation="vertical">
 
 
-
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
+
             android:ems="10"
-            android:hint="Количество дней" />
+            android:hint="Количество дней"
+            android:textStyle="italic" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
             <ImageButton
@@ -38,9 +39,10 @@
                 android:layout_weight="2"
                 android:gravity="left|center_vertical"
                 android:onClick="Winter"
+
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/snejinka"
+                android:src="@drawable/snejinka1"
                 android:text="Зима"
                 android:textColor="#FFFFFF" />
 
@@ -55,7 +57,7 @@
                 android:onClick="Middle"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/listok"
+                android:src="@drawable/listok2"
                 android:text="Весна/Осень"
                 android:textColor="#FFFFFF" />
 
@@ -69,7 +71,7 @@
                 android:onClick="Summer"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/unnamed"
+                android:src="@drawable/unnamed3"
                 android:text="Лето"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -173,15 +175,6 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/created"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="end"
-            android:text="created by SouthBoss"
-            android:textColor="#23282b"
-            android:textSize="10dp" />
     </LinearLayout>
 
 </ScrollView>

@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         winter = (ImageButton) findViewById(R.id.winter);
         middle = (ImageButton) findViewById(Middle);
         summer = (ImageButton) findViewById(Summer);
@@ -84,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
         if (galka == 0) winter.setImageResource(R.drawable.galka);
 
         else if (curr == 2) {
-            middle.setImageResource(R.drawable.listok);
+            middle.setImageResource(R.drawable.listok2);
             winter.setImageResource(R.drawable.galka);
         }
         if (curr == 3) {
-            summer.setImageResource(R.drawable.unnamed);
+            summer.setImageResource(R.drawable.unnamed3);
             winter.setImageResource(R.drawable.galka);
         }
         galka = 1;
@@ -112,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
         woman.setVisibility(View.VISIBLE);
         if (galka == 0) middle.setImageResource(R.drawable.galka);
         else if (curr == 1) {
-            winter.setImageResource(R.drawable.snejinka);
+            winter.setImageResource(R.drawable.snejinka1);
             middle.setImageResource(R.drawable.galka);
         }
         if (curr == 3) {
-            summer.setImageResource(R.drawable.unnamed);
+            summer.setImageResource(R.drawable.unnamed3);
             middle.setImageResource(R.drawable.galka);
         }
         galka = 1;
@@ -129,12 +128,12 @@ public class MainActivity extends AppCompatActivity {
         woman.setVisibility(View.VISIBLE);
         if (galka == 0) summer.setImageResource(R.drawable.galka);
         else if (curr == 1) {
-            winter.setImageResource(R.drawable.snejinka);
+            winter.setImageResource(R.drawable.snejinka1);
             summer.setImageResource(R.drawable.galka);
         }
 
         if (curr == 2) {
-            middle.setImageResource(R.drawable.listok);
+            middle.setImageResource(R.drawable.listok2);
             summer.setImageResource(R.drawable.galka);
 
         }

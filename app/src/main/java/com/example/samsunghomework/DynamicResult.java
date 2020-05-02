@@ -1,6 +1,6 @@
 package com.example.samsunghomework;
 
-import android.app.Dialog;
+import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 public class DynamicResult extends ListActivity {
 
@@ -25,9 +26,11 @@ public class DynamicResult extends ListActivity {
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // setTheme(android.R.style.Theme_Material_Light);
         int curr1 = getIntent().getExtras().getInt("curr1");
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");
@@ -192,8 +195,6 @@ public class DynamicResult extends ListActivity {
             }
 
         }
-
-
         if (DAY > 10) {
             myArr.add("Нижнее белье: 7 шт.");
             myArr.add("Носки: 7 пар");
@@ -288,28 +289,51 @@ public class DynamicResult extends ListActivity {
         inflater.inflate(R.menu.context_menu, menu);
     }
 
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
-            case R.id.edit:
-                editItem(info.position); // метод, выполняющий действие при редактировании пункта меню
+            case R.id.name:
+                editItem(info.position);
                 return true;
             case R.id.delete:
-                deleteItem(info.position); //метод, выполняющий действие при удалении пункта меню
+                deleteItem(info.position);
                 return true;
-            case R.id.add:
-                addItem(info.position); //метод, выполняющий действие при удалении пункта меню
+            case R.id.num:
+
+                numItem(info.position);
                 return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
 
-    private void addItem(int position) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mymenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.add:
+                addItem();
+                return true;
+
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void addItem() {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу новую вещь");
+
 
         // alert.setMessage("Message");
 
@@ -336,7 +360,58 @@ public class DynamicResult extends ListActivity {
     }
 
 
-    private void editItem(int position) {
+    private void numItem(int position) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Введите новое количество");
+
+
+        alert.setMessage("При единичном значении оставьте поле пустым");
+
+        final EditText input = new EditText(this);
+
+        alert.setView(input);
+        alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                String qq = input.getText().toString();
+
+                if (input.length() == 0) {
+                    if (myArr.get(position).contains(":")) {
+                        int index = myArr.get(position).indexOf(":");
+                        myArr.set(position, (myArr.get(position).substring(0, index)));
+                    } else {
+                    }
+                    monthAdapter.notifyDataSetInvalidated();
+
+
+                } else {
+                    if (myArr.get(position).contains(":")) {
+                        int index = myArr.get(position).indexOf(":");
+                        try {
+                            myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq);
+                        } catch (Exception e) {
+                            myArr.set(position, qq);
+                        }
+                    } else {
+                        myArr.set(position, myArr.get(position) + ": " + qq);
+                    }
+                    monthAdapter.notifyDataSetInvalidated();
+                }
+            }
+        });
+
+
+        alert.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+        alert.show();
+
+
+    }
+
+    private void editItem(int position) { //name
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу изменённую вещь");
 
@@ -348,19 +423,35 @@ public class DynamicResult extends ListActivity {
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String qq = input.getText().toString();
-                myArr.set(position, (qq));
+                if (input.length() == 0) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Укажите название", Toast.LENGTH_SHORT);
+                    alert.setView(input);
+                    input.setText("");
+                    toast.show();
 
-                monthAdapter.notifyDataSetInvalidated();
 
+                } else {
+
+                    int index = myArr.get(position).indexOf(":");
+                    try {
+                        myArr.set(position, (qq + myArr.get(position).substring(index)));
+                    } catch (Exception e) {
+                        myArr.set(position, qq);
+                    }
+
+                    monthAdapter.notifyDataSetInvalidated();
+                }
             }
         });
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
             }
-        });
-        alert.show();
 
+        });
+
+        alert.show();
 
         /////////////////////
     }
