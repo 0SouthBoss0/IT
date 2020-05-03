@@ -22,7 +22,6 @@
         </activity>
 
 
-
         <activity
 
             android:name=".DynamicResult">
@@ -31,6 +30,13 @@
             </intent-filter>
         </activity> <!--Add Other activities like this-->
 
+        <activity
+
+            android:name=".AUTH.AUTH">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity> <!--Add Other activities like this-->
 
     </application>
 

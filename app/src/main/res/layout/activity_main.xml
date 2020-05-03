@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrool"
     android:layout_width="match_parent"
@@ -6,12 +9,10 @@
     android:background="#bbbbbb"
     android:fillViewport="false">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    <LinearLayout
         android:id="@+id/mainlayout"
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#bbbbbb"
         android:orientation="vertical">
 
@@ -28,7 +29,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:orientation="horizontal">
 
             <ImageButton
@@ -42,7 +42,7 @@
 
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/snejinka1"
+                android:src="@drawable/winter"
                 android:text="Зима"
                 android:textColor="#FFFFFF" />
 
@@ -57,7 +57,7 @@
                 android:onClick="Middle"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/listok2"
+                android:src="@drawable/listok"
                 android:text="Весна/Осень"
                 android:textColor="#FFFFFF" />
 
@@ -71,7 +71,7 @@
                 android:onClick="Summer"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/unnamed3"
+                android:src="@drawable/summer"
                 android:text="Лето"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
@@ -79,6 +79,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="horizontal">
 
 
@@ -120,8 +121,7 @@
                 android:onClick="Woman"
                 android:paddingTop="32sp"
                 android:scaleType="fitCenter"
-
-                android:src="@drawable/womanqqq"
+                android:src="@drawable/woman"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 

@@ -1,6 +1,4 @@
-package com.example.samsunghomework;
-
-import android.content.Intent;
+package com.example.samsunghomework.AUTH;
 
 import com.google.gson.Gson;
 import org.json.JSONArray;
@@ -14,7 +12,6 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import com.example.samsunghomework.VK_User;
 
 // Класс для передачи JSON Объекта с данными пользователя серверу
 public class SetToServer {

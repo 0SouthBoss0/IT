@@ -1,8 +1,8 @@
 package com.example.samsunghomework;
 
-import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -18,14 +18,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
-import java.util.StringJoiner;
 
 public class DynamicResult extends ListActivity {
 
 
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
-
+    SharedPreferences sPref;
+    String frignjeoihghboi = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,8 @@ public class DynamicResult extends ListActivity {
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
+        frignjeoihghboi = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
+
 
         if (DAY <= 3) {
             myArr.add("Нижнее белье: " + DAY + " шт.");
@@ -329,6 +331,7 @@ public class DynamicResult extends ListActivity {
         }
     }
 
+
     private void addItem() {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -357,6 +360,7 @@ public class DynamicResult extends ListActivity {
 
 
         /////////////////////
+
     }
 
 
@@ -441,6 +445,9 @@ public class DynamicResult extends ListActivity {
                     }
 
                     monthAdapter.notifyDataSetInvalidated();
+              //      loadText(qq);
+                //    saveText(qq);
+
                 }
             }
         });
@@ -483,11 +490,29 @@ public class DynamicResult extends ListActivity {
             }
         }
         if (counter == myArr.size()) {
+
+
             Toast toast = Toast.makeText(getApplicationContext(),
                     "Счастливой поездки!", Toast.LENGTH_SHORT);
             toast.show();
         }
 
+    }
+
+    private void saveText(String qq) {
+
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(frignjeoihghboi, qq);
+        ed.commit();
+
+    }
+
+    private void loadText(String qq) {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(frignjeoihghboi, qq);
+
+        Toast.makeText(this, savedText, Toast.LENGTH_SHORT).show();
     }
 
     public void onqq(ListView l, View v, int position, long id) {

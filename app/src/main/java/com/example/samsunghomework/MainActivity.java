@@ -83,11 +83,11 @@ public class MainActivity extends AppCompatActivity {
         if (galka == 0) winter.setImageResource(R.drawable.galka);
 
         else if (curr == 2) {
-            middle.setImageResource(R.drawable.listok2);
+            middle.setImageResource(R.drawable.listok);
             winter.setImageResource(R.drawable.galka);
         }
         if (curr == 3) {
-            summer.setImageResource(R.drawable.unnamed3);
+            summer.setImageResource(R.drawable.summer);
             winter.setImageResource(R.drawable.galka);
         }
         galka = 1;
@@ -111,11 +111,11 @@ public class MainActivity extends AppCompatActivity {
         woman.setVisibility(View.VISIBLE);
         if (galka == 0) middle.setImageResource(R.drawable.galka);
         else if (curr == 1) {
-            winter.setImageResource(R.drawable.snejinka1);
+            winter.setImageResource(R.drawable.winter);
             middle.setImageResource(R.drawable.galka);
         }
         if (curr == 3) {
-            summer.setImageResource(R.drawable.unnamed3);
+            summer.setImageResource(R.drawable.summer);
             middle.setImageResource(R.drawable.galka);
         }
         galka = 1;
@@ -128,12 +128,12 @@ public class MainActivity extends AppCompatActivity {
         woman.setVisibility(View.VISIBLE);
         if (galka == 0) summer.setImageResource(R.drawable.galka);
         else if (curr == 1) {
-            winter.setImageResource(R.drawable.snejinka1);
+            winter.setImageResource(R.drawable.winter);
             summer.setImageResource(R.drawable.galka);
         }
 
         if (curr == 2) {
-            middle.setImageResource(R.drawable.listok2);
+            middle.setImageResource(R.drawable.listok);
             summer.setImageResource(R.drawable.galka);
 
         }
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             man.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            woman.setImageResource(R.drawable.womanqqq);
+            woman.setImageResource(R.drawable.woman);
             man.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             child.setImageResource(R.drawable.galka);
         }
         if (curr2 == 3) {
-            woman.setImageResource(R.drawable.womanqqq);
+            woman.setImageResource(R.drawable.woman);
             child.setImageResource(R.drawable.galka);
         }
         galka2 = 1;
@@ -202,8 +202,10 @@ public class MainActivity extends AppCompatActivity {
 
     /////////////////////////////////////////////////////////////
     public void turizm(View view) {
-        if (galka3 == 0) turuzm.setImageResource(R.drawable.galka);
-        else if (curr2 == 2) {
+     //   if (galka3 == 0)
+          turuzm.setImageResource(R.drawable.galka);
+      //  else
+            if (curr2 == 2) {
             komandirovka.setImageResource(R.drawable.komandirovka);
             turuzm.setImageResource(R.drawable.galka);
         }
@@ -219,8 +221,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void komandirovka(View view) {
-        if (galka3 == 0) komandirovka.setImageResource(R.drawable.galka);
-        else if (curr3 == 1) {
+      //  if (galka3 == 0)
+            komandirovka.setImageResource(R.drawable.galka);
+       // else
+        if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             komandirovka.setImageResource(R.drawable.galka);
         }
@@ -235,8 +239,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plyazh(View view) {
-        if (galka3 == 0) plyazh.setImageResource(R.drawable.galka);
-        else if (curr3 == 1) {
+       // if (galka3 == 0)
+            plyazh.setImageResource(R.drawable.galka);
+        //else
+            if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             plyazh.setImageResource(R.drawable.galka);
         }

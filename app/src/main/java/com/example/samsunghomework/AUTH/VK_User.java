@@ -1,4 +1,4 @@
-package com.example.samsunghomework;
+package com.example.samsunghomework.AUTH;
 
 public class VK_User {
     public String uid;
