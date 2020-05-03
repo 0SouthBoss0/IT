@@ -303,13 +303,16 @@ public class DynamicResult extends ListActivity {
                 deleteItem(info.position);
                 return true;
             case R.id.num:
-
                 numItem(info.position);
+                return true;
+            case R.id.galka:
+                galka(info.position);
                 return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -445,8 +448,8 @@ public class DynamicResult extends ListActivity {
                     }
 
                     monthAdapter.notifyDataSetInvalidated();
-              //      loadText(qq);
-                //    saveText(qq);
+                    //      loadText(qq);
+                    //    saveText(qq);
 
                 }
             }
@@ -466,6 +469,12 @@ public class DynamicResult extends ListActivity {
     private void deleteItem(int position) {
         myArr.remove(position);
 
+        monthAdapter.notifyDataSetInvalidated();
+    }
+
+    private void galka(int position) {
+        String qq = myArr.get(position).replace("✔", "");
+        myArr.set(position, qq);
         monthAdapter.notifyDataSetInvalidated();
     }
 

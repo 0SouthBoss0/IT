@@ -3,6 +3,7 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="pixel_3a_xl" />
         <device id="pixel" />
         <device id="tv_1080p" />
         <device id="pixel_3a" />
@@ -10,7 +11,6 @@
         <device id="pixel_xl" />
         <device id="pixel_3_xl" />
         <device id="pixel_2" />
-        <device id="pixel_3a_xl" />
         <device id="Nexus 7" />
         <device id="pixel_2_xl" />
       </config>
@@ -21,29 +21,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da05a70f-0cb8-4d24-91c0-9406a85f8986" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/woman.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/AUTH.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/GetAccessToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/GetAccessToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/GetUserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/GetUserInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/SetToServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/SetToServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/VK_User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/VK_User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/child.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/child.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/komandirovka.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/komandirovka.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/listok.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/listok.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/listok2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/man.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/man.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/plyazh.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/plyazh.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/snejinka.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/snejinka1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/winter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/turizm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/turizm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/unnamed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/unnamed3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/summer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/womanqqq.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/menu/context_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/menu/context_menu.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +38,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="VQTBB19B06100881" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="eb37978c7d27" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -77,15 +58,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-104">
-              <caret line="448" column="18" selection-start-line="448" selection-start-column="18" selection-end-line="448" selection-end-column="18" />
+            <state relative-caret-position="438">
+              <caret line="476" column="40" selection-start-line="476" selection-start-column="40" selection-end-line="476" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreateContextMenu#0;class#DynamicResult#0" />
-                <element signature="method#onContextItemSelected#0;class#DynamicResult#0" />
+                <element signature="method#onCreateOptionsMenu#0;class#DynamicResult#0" />
+                <element signature="method#onOptionsItemSelected#0;class#DynamicResult#0" />
                 <element signature="method#addItem#0;class#DynamicResult#0" />
                 <element signature="method#numItem#0;class#DynamicResult#0" />
                 <element signature="method#deleteItem#0;class#DynamicResult#0" />
@@ -96,12 +78,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/menu/context_menu.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+            <state relative-caret-position="459">
+              <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -119,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1520">
-              <caret line="242" column="54" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
+            <state relative-caret-position="153">
+              <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Winter#0;class#MainActivity#0" />
@@ -196,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/qq.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/res/menu/context_menu.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/listview.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/mymenu.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/AUTHTWO.java" />
@@ -204,8 +195,9 @@
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/AUTH/AUTH.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/menu/context_menu.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" />
       </list>
     </option>
   </component>
@@ -254,6 +246,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
@@ -611,7 +609,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20437019" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20437019" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -620,12 +618,12 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49421594" weight="0.22611037" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" weight="0.2974428" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" visible="true" weight="0.08882907" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49871466" weight="0.32974428" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.29884318" side_tool="true" weight="0.27590847" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="6" sideWeight="0.4993573" visible="true" weight="0.04037685" />
+      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4993573" weight="0.060565274" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7011568" weight="0.2422611" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Find" order="9" sideWeight="0.49946696" weight="0.25135428" />
@@ -675,13 +673,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java</url>
-          <line>260</line>
+          <line>259</line>
           <properties class="com.example.samsunghomework.MainActivity" method="CONTINUE" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java</url>
-          <line>179</line>
+          <line>178</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -809,14 +807,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/listview.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/res/drawable/37402.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/res/menu/context_menu.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/mymenu.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -897,10 +887,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="63" column="32" lean-forward="true" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="242" column="54" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
+        <state relative-caret-position="153">
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Winter#0;class#MainActivity#0" />
@@ -912,36 +918,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/res/menu/context_menu.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state relative-caret-position="51">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-104">
-          <caret line="448" column="18" selection-start-line="448" selection-start-column="18" selection-end-line="448" selection-end-column="18" />
+        <state relative-caret-position="438">
+          <caret line="476" column="40" selection-start-line="476" selection-start-column="40" selection-end-line="476" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreateContextMenu#0;class#DynamicResult#0" />
-            <element signature="method#onContextItemSelected#0;class#DynamicResult#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#DynamicResult#0" />
+            <element signature="method#onOptionsItemSelected#0;class#DynamicResult#0" />
             <element signature="method#addItem#0;class#DynamicResult#0" />
             <element signature="method#numItem#0;class#DynamicResult#0" />
             <element signature="method#deleteItem#0;class#DynamicResult#0" />
             <element signature="method#onListItemClick#0;class#DynamicResult#0" />
             <element signature="method#onqq#0;class#DynamicResult#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
         </state>
       </provider>
     </entry>

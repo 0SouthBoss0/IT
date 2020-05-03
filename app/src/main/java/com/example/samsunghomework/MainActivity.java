@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import static com.example.samsunghomework.R.id.Middle;
 import static com.example.samsunghomework.R.id.Summer;
-import static com.example.samsunghomework.R.id.scrool;
 import static com.example.samsunghomework.R.id.turizm;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         komandirovka = (ImageButton) findViewById(R.id.komandirovka);
         plyazh = (ImageButton) findViewById(R.id.plyazh);
         editText = (EditText) findViewById(R.id.editText);
-        scrollView = (ScrollView) findViewById(scrool);
-        scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
+     //   scrollView = (ScrollView) findViewById(scrool);
+//        scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
         editText.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_ATOP);
         man.setVisibility(View.INVISIBLE);
         child.setVisibility(View.INVISIBLE);
