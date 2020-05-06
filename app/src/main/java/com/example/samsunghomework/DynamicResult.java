@@ -11,7 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -366,26 +368,53 @@ public class DynamicResult extends ListActivity {
 
     }
 
+    LinearLayout view;
+    EditText input;
+    Button in;
+    Button gfxtr;
+    Button gfh;
+    String tyfpe;
+    int Type = 0;
 
     private void numItem(int position) {
+        view = (LinearLayout) getLayoutInflater()
+                .inflate(R.layout.dialog, null);
+        input = (EditText) view.findViewById(R.id.input);
+       /* in = (Button) view.findViewById(R.id.in);
+        gfxtr = (Button) view.findViewById(R.id.gfxtr);
+        gfh = (Button) view.findViewById(R.id.gfh);*/
+
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите новое количество");
 
+        alert.setView(view);
 
         alert.setMessage("При единичном значении оставьте поле пустым");
 
-        final EditText input = new EditText(this);
+        //  final EditText input = new EditText(this);
 
-        alert.setView(input);
+        //  alert.setView(input);
+
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
+                if (Type == 1) {
+                    tyfpe = "шт";
+                }
+                if (Type == 2) {
+                    tyfpe = "пачек";
+                }
+                if (Type == 3) {
+                    tyfpe = "пар";
 
+                }
+
+                
                 String qq = input.getText().toString();
 
                 if (input.length() == 0) {
                     if (myArr.get(position).contains(":")) {
                         int index = myArr.get(position).indexOf(":");
-                        myArr.set(position, (myArr.get(position).substring(0, index)));
+                        myArr.set(position, (myArr.get(position).substring(0, index)).replace("✔", "") + " " + tyfpe);
                     } else {
                     }
                     monthAdapter.notifyDataSetInvalidated();
@@ -395,12 +424,13 @@ public class DynamicResult extends ListActivity {
                     if (myArr.get(position).contains(":")) {
                         int index = myArr.get(position).indexOf(":");
                         try {
-                            myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq);
+                            myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq.replace("✔", "") + " " + tyfpe);
                         } catch (Exception e) {
-                            myArr.set(position, qq);
+                            myArr.set(position, qq.replace("✔", "") + " " + tyfpe);
                         }
                     } else {
-                        myArr.set(position, myArr.get(position) + ": " + qq);
+                        String just = myArr.get(position).replace("✔", "");
+                        myArr.set(position, just + ": " + qq + " " + tyfpe);
                     }
                     monthAdapter.notifyDataSetInvalidated();
                 }
@@ -429,7 +459,9 @@ public class DynamicResult extends ListActivity {
         alert.setView(input);
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                String qq = input.getText().toString();
+                String qq = input.getText().toString().replace("✔", "");
+
+
                 if (input.length() == 0) {
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Укажите название", Toast.LENGTH_SHORT);
@@ -537,5 +569,27 @@ public class DynamicResult extends ListActivity {
             }
         });
     }
+
+
+    public void in(View view) { // шт
+
+        Type = 1;
+
+
+    }
+
+    public void gfxtr(View view) { // пачек
+
+        Type = 2;
+    }
+
+
+    public void gfh(View view) { // пар
+
+        Type = 3;
+
+    }
+
+
 }
 
