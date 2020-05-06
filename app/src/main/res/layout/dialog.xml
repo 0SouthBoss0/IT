@@ -24,7 +24,7 @@
             android:gravity="center"
             android:onClick="in"
             android:scaleType="fitCenter"
-            android:text="шт"></Button>
+            android:text="шт."></Button>
 
         <Button
             android:id="@+id/gfxtr"

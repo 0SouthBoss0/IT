@@ -380,9 +380,7 @@ public class DynamicResult extends ListActivity {
         view = (LinearLayout) getLayoutInflater()
                 .inflate(R.layout.dialog, null);
         input = (EditText) view.findViewById(R.id.input);
-       /* in = (Button) view.findViewById(R.id.in);
-        gfxtr = (Button) view.findViewById(R.id.gfxtr);
-        gfh = (Button) view.findViewById(R.id.gfh);*/
+
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите новое количество");
@@ -397,42 +395,69 @@ public class DynamicResult extends ListActivity {
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                if (Type == 1) {
-                    tyfpe = "шт";
-                }
-                if (Type == 2) {
-                    tyfpe = "пачек";
-                }
-                if (Type == 3) {
-                    tyfpe = "пар";
 
-                }
 
-                
                 String qq = input.getText().toString();
 
                 if (input.length() == 0) {
                     if (myArr.get(position).contains(":")) {
                         int index = myArr.get(position).indexOf(":");
-                        myArr.set(position, (myArr.get(position).substring(0, index)).replace("✔", "") + " " + tyfpe);
+                        myArr.set(position, (myArr.get(position).substring(0, index)).replace("✔", ""));
                     } else {
                     }
                     monthAdapter.notifyDataSetInvalidated();
 
 
                 } else {
-                    if (myArr.get(position).contains(":")) {
-                        int index = myArr.get(position).indexOf(":");
-                        try {
-                            myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq.replace("✔", "") + " " + tyfpe);
-                        } catch (Exception e) {
-                            myArr.set(position, qq.replace("✔", "") + " " + tyfpe);
-                        }
-                    } else {
-                        String just = myArr.get(position).replace("✔", "");
-                        myArr.set(position, just + ": " + qq + " " + tyfpe);
+                    int check = 0;
+                    int TypeQ = 0;
+                    try {
+                        TypeQ = Integer.parseInt(qq);
+                    } catch (Exception e) {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Введено неверное количество", Toast.LENGTH_SHORT);
+                        toast.show();
+                        check = 1;
                     }
-                    monthAdapter.notifyDataSetInvalidated();
+                    if (check == 0) {
+                        if (TypeQ != 0) {
+                            if (Type == 1) {
+                                tyfpe = "шт.";
+
+
+                            }
+                            if (Type == 2) {
+                                if (TypeQ % 10 == 1) {
+                                    tyfpe = "пачка";
+                                }
+                                if (TypeQ % 10 == 2 || TypeQ % 10 == 3 || TypeQ % 10 == 4) {
+                                    tyfpe = "пачки";
+                                }
+                                if (TypeQ % 10 > 4) {
+                                    tyfpe = "пачек";
+                                }
+
+
+                            }
+                            if (Type == 3) {
+                                tyfpe = "пар";
+
+
+                            }
+                        }
+                        if (myArr.get(position).contains(":")) {
+                            int index = myArr.get(position).indexOf(":");
+                            try {
+                                myArr.set(position, (myArr.get(position).substring(0, index + 2)) + qq.replace("✔", "") + " " + tyfpe);
+                            } catch (Exception e) {
+                                myArr.set(position, qq.replace("✔", "") + " " + tyfpe);
+                            }
+                        } else {
+                            String just = myArr.get(position).replace("✔", "");
+                            myArr.set(position, just + ": " + qq + " " + tyfpe);
+                        }
+                        monthAdapter.notifyDataSetInvalidated();
+                    }
                 }
             }
         });
@@ -570,10 +595,13 @@ public class DynamicResult extends ListActivity {
         });
     }
 
-
+int KNOPKA;
     public void in(View view) { // шт
 
         Type = 1;
+        in = (Button) view.findViewById(R.id.in);
+        
+        KNOPKA = 1;
 
 
     }
