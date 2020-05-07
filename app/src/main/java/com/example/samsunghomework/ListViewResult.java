@@ -1,6 +1,5 @@
 package com.example.samsunghomework;
 
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,22 +17,21 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class DynamicResult extends ListActivity {
-
-
+public class ListViewResult extends AppCompatActivity {
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
     SharedPreferences sPref;
     String frignjeoihghboi = "";
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // setTheme(android.R.style.Theme_Material_Light);
+        setContentView(R.layout.listview);
         int curr1 = getIntent().getExtras().getInt("curr1");
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");
@@ -280,11 +278,44 @@ public class DynamicResult extends ListActivity {
 
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
-        setListAdapter(monthAdapter);
-        registerForContextMenu(getListView());
 
+        listView = (ListView) findViewById(R.id.listodejda);
+        listView.setAdapter(monthAdapter);
+        registerForContextMenu(listView);
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> arg0, View view,
+                                            int position, long id) {
+
+                        String month = (String) monthAdapter.getItem(position);
+                        String element = (String) myArr.get(position), sub = "✔";
+
+
+                        if (element.indexOf(sub) == -1) {
+                            myArr.set(position, (element + " ✔️"));
+                            monthAdapter.notifyDataSetInvalidated();
+
+                        }
+                        int counter = 0;
+                        for (int i = 0; i < myArr.size(); i++) {
+                            String qq = (String) monthAdapter.getItem(i);
+                            String ll = (String) myArr.get(i), subb = "✔";
+                            if (ll.indexOf(subb) != -1) {
+                                counter++;
+                            }
+                        }
+                        if (counter == myArr.size()) {
+
+
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    "Счастливой поездки!", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    }
+                }
+        );
     }
-
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
@@ -338,7 +369,7 @@ public class DynamicResult extends ListActivity {
     }
 
 
-    private void addItem() {
+    private void addItem() { //////////////////////////
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу новую вещь");
@@ -536,35 +567,6 @@ public class DynamicResult extends ListActivity {
         monthAdapter.notifyDataSetInvalidated();
     }
 
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-
-        String month = (String) getListAdapter().getItem(position);
-        String element = (String) myArr.get(position), sub = "✔";
-
-
-        if (element.indexOf(sub) == -1) {
-            myArr.set(position, (element + " ✔️"));
-            monthAdapter.notifyDataSetInvalidated();
-
-        }
-        int counter = 0;
-        for (int i = 0; i < myArr.size(); i++) {
-            String qq = (String) getListAdapter().getItem(i);
-            String ll = (String) myArr.get(i), subb = "✔";
-            if (ll.indexOf(subb) != -1) {
-                counter++;
-            }
-        }
-        if (counter == myArr.size()) {
-
-
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Счастливой поездки!", Toast.LENGTH_SHORT);
-            toast.show();
-        }
-
-    }
 
     private void saveText(String qq) {
 
@@ -587,7 +589,7 @@ public class DynamicResult extends ListActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id1) {
 ////////////////////////////////////////////////////////////////////////////////////////////////
-                DynamicResult.this.openContextMenu(l);
+                ListViewResult.this.openContextMenu(l);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -622,4 +624,6 @@ public class DynamicResult extends ListActivity {
 
 
 }
+
+
 

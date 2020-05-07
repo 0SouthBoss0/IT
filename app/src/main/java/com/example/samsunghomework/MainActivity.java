@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -290,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Do do my action here
 
-                        Intent i = new Intent(MainActivity.this, DynamicResult.class);
+                        Intent i = new Intent(MainActivity.this, ListViewResult.class);
 
                         i.putExtra("curr1", curr);
                         i.putExtra("curr2", curr2);

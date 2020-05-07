@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/add"
-        android:icon="@drawable/plusk"
+        android:icon="@drawable/plusec"
         android:title="Добавить вещь"
         app:showAsAction="always" />
 </menu>
