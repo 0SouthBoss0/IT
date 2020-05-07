@@ -603,23 +603,47 @@ public class ListViewResult extends AppCompatActivity {
     public void in(View view) { // шт
 
         Type = 1;
-        in = (Button) view.findViewById(R.id.in);
-
+        setText(Type);
         KNOPKA = 1;
 
 
     }
 
+    public void setText(int Type) {
+        Button inButton = view.findViewById(R.id.in);
+        Button gfxtrButton = view.findViewById(R.id.gfxtr);
+        Button gfhButton = view.findViewById(R.id.gfh);
+        if (Type == 1) {
+            inButton.setText("шт. ✔");
+            gfxtrButton.setText("пачек");
+            gfhButton.setText("пар");
+        }
+        if (Type == 2) {
+            gfxtrButton.setText("пачек ✔");
+            inButton.setText("шт.");
+            gfhButton.setText("пар");
+        }
+        if (Type == 3) {
+            gfhButton.setText("пар ✔");
+            gfxtrButton.setText("пачек");
+            inButton.setText("шт.");
+        }
+    }
+
     public void gfxtr(View view) { // пачек
 
+
         Type = 2;
+        setText(Type);
     }
 
 
     public void gfh(View view) { // пар
 
-        Type = 3;
 
+
+        Type = 3;
+        setText(Type);
     }
 
 
