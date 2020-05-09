@@ -25,7 +25,7 @@ public class ListViewResult extends AppCompatActivity {
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
     SharedPreferences sPref;
-    String frignjeoihghboi = "";
+    String UNIC = "";
     ListView listView;
 
     @Override
@@ -36,7 +36,7 @@ public class ListViewResult extends AppCompatActivity {
         int curr2 = getIntent().getExtras().getInt("curr2");
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
-        frignjeoihghboi = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
+        UNIC = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
 
 
         if (DAY <= 3) {
@@ -362,6 +362,9 @@ public class ListViewResult extends AppCompatActivity {
             case R.id.add:
                 addItem();
                 return true;
+            case R.id.save:
+                saveList();
+                return true;
 
             default:
                 return super.onContextItemSelected(item);
@@ -472,7 +475,15 @@ public class ListViewResult extends AppCompatActivity {
 
                             }
                             if (Type == 3) {
-                                tyfpe = "пар";
+                                if (TypeQ % 10 == 1) {
+                                    tyfpe = "пара";
+                                }
+                                if (TypeQ % 10 == 2 || TypeQ % 10 == 3 || TypeQ % 10 == 4) {
+                                    tyfpe = "пары";
+                                }
+                                if (TypeQ % 10 > 4) {
+                                    tyfpe = "пар";
+                                }
 
 
                             }
@@ -568,20 +579,46 @@ public class ListViewResult extends AppCompatActivity {
     }
 
 
-    private void saveText(String qq) {
+    private void saveList() {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Вы уверены, что хотите сохранить Ваш список?");
+
+        alert.setView(view);
+
+        alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+
+            }
+        });
+
+
+        alert.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+            }
+        });
+        alert.show();
+
+
+    }
+
+
+    private void saveText(String SAVEDITEMS) {
 
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(frignjeoihghboi, qq);
+        ed.putString(UNIC, SAVEDITEMS);
         ed.commit();
 
     }
 
-    private void loadText(String qq) {
+    private void loadText(String SAVEDITEMS) {
         sPref = getPreferences(MODE_PRIVATE);
-        String savedText = sPref.getString(frignjeoihghboi, qq);
+        String savedText = sPref.getString(UNIC, SAVEDITEMS);
 
-        Toast.makeText(this, savedText, Toast.LENGTH_SHORT).show();
+
     }
 
     public void onqq(ListView l, View v, int position, long id) {
@@ -639,7 +676,6 @@ public class ListViewResult extends AppCompatActivity {
 
 
     public void gfh(View view) { // пар
-
 
 
         Type = 3;
