@@ -28,6 +28,16 @@ public class ListViewResult extends AppCompatActivity {
     String UNIC = "";
     ListView listView;
 
+    public String getSAVEDITEMS() {
+        return SAVEDITEMS;
+    }
+
+    public void setSAVEDITEMS(String SAVEDITEMS) {
+        this.SAVEDITEMS = SAVEDITEMS;
+    }
+
+    String SAVEDITEMS = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +47,7 @@ public class ListViewResult extends AppCompatActivity {
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
         UNIC = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
-
+        loadText(UNIC);
 
         if (DAY <= 3) {
             myArr.add("Нижнее белье: " + DAY + " шт.");
@@ -388,7 +398,7 @@ public class ListViewResult extends AppCompatActivity {
                 String qq = input.getText().toString();
                 myArr.add(qq);
                 monthAdapter.notifyDataSetInvalidated();
-
+                SAVEDITEMS = SAVEDITEMS + qq + "&";
             }
         });
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -588,7 +598,7 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-
+                saveText(SAVEDITEMS);
 
             }
         });
@@ -614,9 +624,36 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
-    private void loadText(String SAVEDITEMS) {
+    private void loadText(String UNIC) {
         sPref = getPreferences(MODE_PRIVATE);
         String savedText = sPref.getString(UNIC, SAVEDITEMS);
+
+        if (savedText != "") {
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("Вы хотите загрузить Ваш прошлый список?");
+
+            alert.setView(view);
+
+            alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    //переменная savedText - сохранеенные итемы, разделенные &
+
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            savedText, Toast.LENGTH_SHORT);
+                    toast.show();
+
+                }
+            });
+
+
+            alert.setNegativeButton("НЕТ", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                }
+            });
+            alert.show();
+
+        }
 
 
     }
