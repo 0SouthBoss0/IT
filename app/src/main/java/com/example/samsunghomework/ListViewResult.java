@@ -124,6 +124,8 @@ public class ListViewResult extends AppCompatActivity {
 
 
         }
+
+
         if (DAY > 3 && DAY <= 10) { //СТИРКА
             myArr.add("Нижнее белье: " + (int) Math.round(DAY / 2) + " шт.");
             myArr.add("Носки: " + (int) Math.round(DAY / 2) + " шт.");
@@ -278,8 +280,64 @@ public class ListViewResult extends AppCompatActivity {
                 myArr.add("Снаряжение для подводного плавания");
                 myArr.add("Зонт от солнца");
             }
-        }
 
+        }
+        if (curr2 == 1) {
+            myArr.add("Телефон и зарядное устройство");
+            myArr.add("Наушники");
+            myArr.add("Бритва");
+            myArr.add("Гель для бритья");
+            myArr.add("Зубная щётка");
+            myArr.add("Зубная паста");
+            myArr.add("Гель для душа");
+            myArr.add("Туалетная бумага");
+            myArr.add("Мочалка");
+            myArr.add("Дезодорант");
+            myArr.add("Расчёска");
+            myArr.add("Паспорт");
+            myArr.add("Водительские права");
+            myArr.add("Медицинский полис");
+            myArr.add("Наличные");
+            myArr.add("Банковская карта");
+            myArr.add("Билеты на транспорт");
+
+        }
+        if (curr2 == 2) {
+            myArr.add("Плед");
+            myArr.add("Зубная щётка");
+            myArr.add("Зубная паста");
+            myArr.add("Небольшая игрушка");
+            myArr.add("Гель для душа");
+            myArr.add("Туалетная бумага");
+            myArr.add("Мочалка");
+            myArr.add("Салфетки");
+            myArr.add("Расчёска");
+            myArr.add("Свидетельство о рождении");
+            myArr.add("Медицинский полис");
+            myArr.add("Билеты на транспорт");
+        }
+        if (curr2 == 3) {
+            myArr.add("Телефон и зарядное устройство");
+            myArr.add("Наушники");
+            myArr.add("Бритва");
+            myArr.add("Гель для бритья");
+            myArr.add("Зубная щётка");
+            myArr.add("Зубная паста");
+            myArr.add("Гель для душа");
+            myArr.add("Туалетная бумага");
+            myArr.add("Мочалка");
+            myArr.add("Дезодорант");
+            myArr.add("Косметика");
+            myArr.add("Парфюм");
+            myArr.add("Расчёска");
+            myArr.add("Паспорт");
+            myArr.add("Водительские права");
+            myArr.add("Медицинский полис");
+            myArr.add("Наличные");
+            myArr.add("Банковская карта");
+            myArr.add("Билеты на транспорт");
+
+        }
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
 
@@ -597,7 +655,7 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                saveText(SAVEDITEMS);
+                saveText();
 
             }
         });
@@ -614,10 +672,10 @@ public class ListViewResult extends AppCompatActivity {
     }
 
 
-    private void saveText(String SAVEDITEMS) {
+    private void saveText() {
 
         for (int i = 0; i < myArr.size(); i++) {
-            SAVEDITEMS = SAVEDITEMS + myArr.get(i) + "&";
+            SAVEDITEMS = SAVEDITEMS + myArr.get(i).replace("✔", "") + "&";
         }
 
         sPref = getPreferences(MODE_PRIVATE);
@@ -642,7 +700,7 @@ public class ListViewResult extends AppCompatActivity {
 
             alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                   myArr.clear();
+                    myArr.clear();
                     //переменная savedText - сохранеенные итемы, разделенные &
                     List<String> textArray = new ArrayList<>(Arrays.asList(savedText.split("&")));
 
