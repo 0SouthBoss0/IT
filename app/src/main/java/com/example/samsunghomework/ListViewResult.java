@@ -20,6 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ListViewResult extends AppCompatActivity {
     ArrayList<String> myArr = new ArrayList<>();
@@ -622,6 +624,9 @@ public class ListViewResult extends AppCompatActivity {
         ed.putString(UNIC, SAVEDITEMS);
         ed.commit();
 
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "Ваш список сохранен", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     private void loadText(String UNIC) {
@@ -637,11 +642,15 @@ public class ListViewResult extends AppCompatActivity {
             alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
                     //переменная savedText - сохранеенные итемы, разделенные &
+                    List<String> textArray = new ArrayList<>(Arrays.asList(savedText.split("&")));
+
+                    myArr.addAll(textArray);
+
+                    monthAdapter.notifyDataSetInvalidated();
 
                     Toast toast = Toast.makeText(getApplicationContext(),
-                            savedText, Toast.LENGTH_SHORT);
+                            "Ваш список загружен", Toast.LENGTH_SHORT);
                     toast.show();
-
                 }
             });
 
