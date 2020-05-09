@@ -21,8 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da05a70f-0cb8-4d24-91c0-9406a85f8986" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,14 +59,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="627" column="36" selection-start-line="627" selection-start-column="36" selection-end-line="627" selection-end-column="36" />
+            <state relative-caret-position="241">
+              <caret line="644" column="34" selection-start-line="644" selection-start-column="34" selection-end-line="644" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-                <element signature="e#986#987#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
                 <element signature="method#numItem#0;class#ListViewResult#0" />
                 <element signature="method#editItem#0;class#ListViewResult#0" />
                 <element signature="method#deleteItem#0;class#ListViewResult#0" />
@@ -79,15 +75,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3978">
-              <caret line="325" column="25" selection-start-line="323" selection-start-column="11" selection-end-line="325" selection-end-column="25" />
+            <state relative-caret-position="-377">
+              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Winter#0;class#MainActivity#0" />
-                <element signature="method#Middle#0;class#MainActivity#0" />
-                <element signature="method#Man#0;class#MainActivity#0" />
-                <element signature="method#Child#0;class#MainActivity#0" />
-                <element signature="method#Woman#0;class#MainActivity#0" />
               </folding>
             </state>
           </provider>
@@ -219,15 +210,15 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/view.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/DynamicResult.java" />
         <option value="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/listview.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/adddialog.xml" />
         <option value="$PROJECT_DIR$/src/main/res/menu/mymenu.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="27" />
     <option name="y" value="53" />
     <option name="width" value="1329" />
@@ -239,7 +230,33 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="samsunghomework" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SamsungHomework" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java (generated)" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -284,7 +301,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.recentlyUsedThemes" value="android:Theme.Holo" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/IT-master/IT-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -643,7 +660,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -656,13 +673,13 @@
       <window_info id="Resources Explorer" order="7" weight="0.32969153" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.49421594" weight="0.22611037" />
-      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" weight="0.4320323" />
+      <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.8708226" visible="true" weight="0.15343203" />
       <window_info anchor="bottom" id="TODO" order="2" sideWeight="0.49871466" weight="0.22880216" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32974428" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4993573" weight="0.32974428" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.29884318" side_tool="true" weight="0.27590847" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.4993573" weight="0.060565274" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7011568" visible="true" weight="0.11978465" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.7011568" weight="0.11978465" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info active="true" anchor="bottom" id="Find" order="9" sideWeight="0.49946696" visible="true" weight="0.25033647" />
       <window_info anchor="bottom" id="Inspection Results" order="10" sideWeight="0.4993573" weight="0.32974428" />
@@ -711,7 +728,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java</url>
-          <line>260</line>
+          <line>243</line>
           <properties class="com.example.samsunghomework.MainActivity" method="CONTINUE" />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -725,7 +742,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java</url>
-          <line>179</line>
+          <line>163</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -963,39 +980,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="627" column="36" selection-start-line="627" selection-start-column="36" selection-end-line="627" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1030#1031#0" expanded="true" />
-            <element signature="method#numItem#0;class#ListViewResult#0" />
-            <element signature="method#editItem#0;class#ListViewResult#0" />
-            <element signature="method#deleteItem#0;class#ListViewResult#0" />
-            <element signature="method#galka#0;class#ListViewResult#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3978">
-          <caret line="325" column="25" selection-start-line="323" selection-start-column="11" selection-end-line="325" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Winter#0;class#MainActivity#0" />
-            <element signature="method#Middle#0;class#MainActivity#0" />
-            <element signature="method#Man#0;class#MainActivity#0" />
-            <element signature="method#Child#0;class#MainActivity#0" />
-            <element signature="method#Woman#0;class#MainActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/adddialog.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -1028,11 +1012,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-377">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/menu/mymenu.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/samsunghomework/ListViewResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="644" column="34" selection-start-line="644" selection-start-column="34" selection-end-line="644" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#numItem#0;class#ListViewResult#0" />
+            <element signature="method#editItem#0;class#ListViewResult#0" />
+            <element signature="method#deleteItem#0;class#ListViewResult#0" />
+            <element signature="method#galka#0;class#ListViewResult#0" />
+          </folding>
         </state>
       </provider>
     </entry>

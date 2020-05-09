@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -31,29 +29,24 @@ public class MainActivity extends AppCompatActivity {
     ImageButton turuzm;
     ImageButton komandirovka;
     ImageButton plyazh;
-    ScrollView scrollView;
     LinearLayout mainlayout;
-
-
     EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        winter = (ImageButton) findViewById(R.id.winter);
-        middle = (ImageButton) findViewById(Middle);
-        summer = (ImageButton) findViewById(Summer);
-        mainlayout = (LinearLayout) findViewById(R.id.mainlayout);
-        man = (ImageButton) findViewById(R.id.man);
-        child = (ImageButton) findViewById(R.id.child);
-        woman = (ImageButton) findViewById(R.id.woman);
-        turuzm = (ImageButton) findViewById(turizm);
-        komandirovka = (ImageButton) findViewById(R.id.komandirovka);
-        plyazh = (ImageButton) findViewById(R.id.plyazh);
-        editText = (EditText) findViewById(R.id.editText);
-     //   scrollView = (ScrollView) findViewById(scrool);
-//        scrollView.setBackgroundColor(Color.parseColor("#bbbbbb"));
+        winter = findViewById(R.id.winter);
+        middle = findViewById(Middle);
+        summer = findViewById(Summer);
+        mainlayout = findViewById(R.id.mainlayout);
+        man = findViewById(R.id.man);
+        child = findViewById(R.id.child);
+        woman = findViewById(R.id.woman);
+        turuzm = findViewById(turizm);
+        komandirovka = findViewById(R.id.komandirovka);
+        plyazh = findViewById(R.id.plyazh);
+        editText = findViewById(R.id.editText);
         editText.getBackground().setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_ATOP);
         man.setVisibility(View.INVISIBLE);
         child.setVisibility(View.INVISIBLE);
@@ -92,16 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
         galka = 1;
         curr = 1;
-        //  mainlayout.addView(new ImageButton(this));
-       /*
-        ImageButton imageButton = new ImageButton(MainActivity.this);
-        imageButton.setImageResource(R.drawable.galka);
-        LinearLayout.LayoutParams imageViewLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        imageButton.setLayoutParams(imageViewLayoutParams);
-
-        mainlayout.addView(imageButton);
-*/
     }
 
 
@@ -200,12 +184,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /////////////////////////////////////////////////////////////
     public void turizm(View view) {
-     //   if (galka3 == 0)
-          turuzm.setImageResource(R.drawable.galka);
-      //  else
-            if (curr2 == 2) {
+        //   if (galka3 == 0)
+        turuzm.setImageResource(R.drawable.galka);
+        //  else
+        if (curr2 == 2) {
             komandirovka.setImageResource(R.drawable.komandirovka);
             turuzm.setImageResource(R.drawable.galka);
         }
@@ -221,9 +204,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void komandirovka(View view) {
-      //  if (galka3 == 0)
-            komandirovka.setImageResource(R.drawable.galka);
-       // else
+        //  if (galka3 == 0)
+        komandirovka.setImageResource(R.drawable.galka);
+        // else
         if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             komandirovka.setImageResource(R.drawable.galka);
@@ -239,10 +222,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plyazh(View view) {
-       // if (galka3 == 0)
-            plyazh.setImageResource(R.drawable.galka);
+        // if (galka3 == 0)
+        plyazh.setImageResource(R.drawable.galka);
         //else
-            if (curr3 == 1) {
+        if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             plyazh.setImageResource(R.drawable.galka);
         }

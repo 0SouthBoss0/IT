@@ -30,14 +30,6 @@ public class ListViewResult extends AppCompatActivity {
     String UNIC = "";
     ListView listView;
 
-    public String getSAVEDITEMS() {
-        return SAVEDITEMS;
-    }
-
-    public void setSAVEDITEMS(String SAVEDITEMS) {
-        this.SAVEDITEMS = SAVEDITEMS;
-    }
-
     String SAVEDITEMS = "";
 
     @Override
@@ -393,14 +385,19 @@ public class ListViewResult extends AppCompatActivity {
         // alert.setMessage("Message");
 
         final EditText input = new EditText(this);
-
         alert.setView(input);
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String qq = input.getText().toString();
-                myArr.add(qq);
-                monthAdapter.notifyDataSetInvalidated();
-                SAVEDITEMS = SAVEDITEMS + qq + "&";
+                if (qq.isEmpty()) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Введите название вещи", Toast.LENGTH_SHORT);
+                    toast.show();
+                } else {
+                    myArr.add(qq);
+                    monthAdapter.notifyDataSetInvalidated();
+
+                }
             }
         });
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -619,6 +616,10 @@ public class ListViewResult extends AppCompatActivity {
 
     private void saveText(String SAVEDITEMS) {
 
+        for (int i = 0; i < myArr.size(); i++) {
+            SAVEDITEMS = SAVEDITEMS + myArr.get(i) + "&";
+        }
+
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
         ed.putString(UNIC, SAVEDITEMS);
@@ -641,6 +642,7 @@ public class ListViewResult extends AppCompatActivity {
 
             alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
+                   myArr.clear();
                     //переменная savedText - сохранеенные итемы, разделенные &
                     List<String> textArray = new ArrayList<>(Arrays.asList(savedText.split("&")));
 
