@@ -569,6 +569,7 @@ public class ListViewResult extends AppCompatActivity {
                         monthAdapter.notifyDataSetInvalidated();
                     }
                 }
+                ;
             }
         });
 
@@ -651,7 +652,7 @@ public class ListViewResult extends AppCompatActivity {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Вы уверены, что хотите сохранить Ваш список?");
 
-        alert.setView(view);
+
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {

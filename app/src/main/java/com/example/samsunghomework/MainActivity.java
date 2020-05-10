@@ -218,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
         galka3 = 1;
         curr3 = 2;
         alo = 0;
+
         CONTINUE();
     }
 
