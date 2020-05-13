@@ -341,7 +341,7 @@ public class ListViewResult extends AppCompatActivity {
 
         monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
 
-        listView = (ListView) findViewById(R.id.listodejda);
+        listView = findViewById(R.id.listodejda);
         listView.setAdapter(monthAdapter);
         registerForContextMenu(listView);
         listView.setOnItemClickListener(
@@ -350,8 +350,8 @@ public class ListViewResult extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> arg0, View view,
                                             int position, long id) {
 
-                        String month = (String) monthAdapter.getItem(position);
-                        String element = (String) myArr.get(position), sub = "✔";
+
+                        String element = myArr.get(position), sub = "✔";
 
 
                         if (element.indexOf(sub) == -1) {
@@ -361,8 +361,8 @@ public class ListViewResult extends AppCompatActivity {
                         }
                         int counter = 0;
                         for (int i = 0; i < myArr.size(); i++) {
-                            String qq = (String) monthAdapter.getItem(i);
-                            String ll = (String) myArr.get(i), subb = "✔";
+
+                            String ll = myArr.get(i), subb = "✔";
                             if (ll.indexOf(subb) != -1) {
                                 counter++;
                             }
@@ -433,29 +433,114 @@ public class ListViewResult extends AppCompatActivity {
         }
     }
 
+    LinearLayout addview;
+    EditText addinput;
+    EditText addinputq;
+    Button addin;
+    Button addgfxtr;
+    Button addgfh;
+    int addType = 0;
 
-    private void addItem() { //////////////////////////
+    public void addin(View view) {
+        addType = 1;
+        addsetText(addType);
+    }
+
+    public void addgfxtr(View view) {
+        addType = 2;
+        addsetText(addType);
+    }
+
+    public void addgfh(View view) {
+        addType = 3;
+        addsetText(addType);
+    }
+
+    String addtypfre;
+
+    private void addItem() {
+        addview = (LinearLayout) getLayoutInflater()
+                .inflate(R.layout.adddialog, null);
+        addinput = addview.findViewById(R.id.addinput);
+        addinputq = addview.findViewById(R.id.addinputq);
+        addin = addview.findViewById(R.id.addin);
+        addgfxtr = addview.findViewById(R.id.addgfxtr);
+        addgfh = addview.findViewById(R.id.addgfh);
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу новую вещь");
 
 
-        // alert.setMessage("Message");
-
-        final EditText input = new EditText(this);
-        alert.setView(input);
+        alert.setView(addview);
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
             public void onClick(DialogInterface dialog, int whichButton) {
-                String qq = input.getText().toString();
+                String qq = addinput.getText().toString();
+                String qqq = addinputq.getText().toString();
+
                 if (qq.isEmpty()) {
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Введите название вещи", Toast.LENGTH_SHORT);
                     toast.show();
                 } else {
-                    myArr.add(qq);
-                    monthAdapter.notifyDataSetInvalidated();
+
+                    int addCheck = 0;
+                    int typeAdd = 0;
+
+                    try {
+                        typeAdd = Integer.parseInt(qqq);
+                    } catch (Exception e) {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "Введено неверное количество", Toast.LENGTH_SHORT);
+                        toast.show();
+                        addCheck = 1;
+                    }
+                    if (addCheck == 0) {
+                        if (addType != 0) {
+                            if (typeAdd == 1) {
+                                addtypfre = "шт.";
+
+
+                            }
+                            if (addType == 2) {
+                                if (typeAdd % 10 == 1) {
+                                    addtypfre = "пачка";
+                                }
+                                if (typeAdd % 10 == 2 || typeAdd % 10 == 3 || typeAdd % 10 == 4) {
+                                    addtypfre = "пачки";
+                                }
+                                if (typeAdd % 10 > 4) {
+                                    addtypfre = "пачек";
+                                }
+
+
+                            }
+                            if (addType == 3) {
+                                if (typeAdd % 10 == 1) {
+                                    addtypfre = "пара";
+                                }
+                                if (typeAdd % 10 == 2 || typeAdd % 10 == 3 || typeAdd % 10 == 4) {
+                                    addtypfre = "пары";
+                                }
+                                if (typeAdd % 10 > 4) {
+                                    addtypfre = "пар";
+                                }
+
+
+                            }
+                            myArr.add(qq + ": " + qqq + " " + addtypfre);
+                        } else {
+                            myArr.add(qq + ": " + qqq);
+                        }
+
+
+                        monthAdapter.notifyDataSetInvalidated();
+                    }
+
 
                 }
+
+
             }
         });
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -466,22 +551,17 @@ public class ListViewResult extends AppCompatActivity {
         alert.show();
 
 
-        /////////////////////
-
     }
 
     LinearLayout view;
     EditText input;
-    Button in;
-    Button gfxtr;
-    Button gfh;
     String tyfpe;
     int Type = 0;
 
     private void numItem(int position) {
         view = (LinearLayout) getLayoutInflater()
                 .inflate(R.layout.dialog, null);
-        input = (EditText) view.findViewById(R.id.input);
+        input = view.findViewById(R.id.input);
 
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -491,9 +571,6 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.setMessage("При единичном значении оставьте поле пустым");
 
-        //  final EditText input = new EditText(this);
-
-        //  alert.setView(input);
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
@@ -588,8 +665,6 @@ public class ListViewResult extends AppCompatActivity {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу изменённую вещь");
 
-        // alert.setMessage("Message");
-
         final EditText input = new EditText(this);
 
         alert.setView(input);
@@ -616,8 +691,7 @@ public class ListViewResult extends AppCompatActivity {
                     }
 
                     monthAdapter.notifyDataSetInvalidated();
-                    //      loadText(qq);
-                    //    saveText(qq);
+
 
                 }
             }
@@ -651,7 +725,6 @@ public class ListViewResult extends AppCompatActivity {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Вы уверены, что хотите сохранить Ваш список?");
-
 
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
@@ -771,6 +844,31 @@ public class ListViewResult extends AppCompatActivity {
             gfhButton.setText("пар ✔");
             gfxtrButton.setText("пачек");
             inButton.setText("шт.");
+        }
+    }
+
+    Button addinButton;
+    Button addgfxtrButton;
+    Button addgfhButton;
+
+    public void addsetText(int addType) {
+        addinButton = (Button) addview.findViewById(R.id.addin);
+        addgfxtrButton = (Button) addview.findViewById(R.id.addgfxtr);
+        addgfhButton = (Button) addview.findViewById(R.id.addgfh);
+        if (addType == 1) {
+            addinButton.setText("шт. ✔");
+            addgfxtrButton.setText("пачек");
+            addgfhButton.setText("пар");
+        }
+        if (addType == 2) {
+            addgfxtrButton.setText("пачек ✔");
+            addinButton.setText("шт.");
+            addgfhButton.setText("пар");
+        }
+        if (addType == 3) {
+            addgfhButton.setText("пар ✔");
+            addgfxtrButton.setText("пачек");
+            addinButton.setText("шт.");
         }
     }
 

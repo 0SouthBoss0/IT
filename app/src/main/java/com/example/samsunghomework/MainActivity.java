@@ -1,8 +1,10 @@
 package com.example.samsunghomework;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton plyazh;
     LinearLayout mainlayout;
     EditText editText;
-
+    private static final String MY_SETTINGS = "my_settings";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,21 @@ public class MainActivity extends AppCompatActivity {
         turuzm.setVisibility(View.INVISIBLE);
         komandirovka.setVisibility(View.INVISIBLE);
         plyazh.setVisibility(View.INVISIBLE);
+        SharedPreferences check = getSharedPreferences(MY_SETTINGS,
+                Context.MODE_PRIVATE);
+        // проверяем, первый ли раз открывается программа
+        boolean hasVisited = check.getBoolean("hasVisited", false);
 
+        if (!hasVisited) {
+            // выводим нужную активность
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "WELCOME", Toast.LENGTH_SHORT);
+
+            toast.show();
+            SharedPreferences.Editor e = check.edit();
+            e.putBoolean("hasVisited", true);
+            e.commit(); // не забудьте подтвердить изменения
+        }
     }
 
 
