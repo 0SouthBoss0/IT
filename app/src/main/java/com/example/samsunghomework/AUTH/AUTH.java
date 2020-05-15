@@ -1,4 +1,4 @@
-package com.example.samsunghomework;
+package com.example.samsunghomework.AUTH;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -16,18 +16,20 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;;
+import com.example.samsunghomework.R;
+
 import org.json.JSONObject;
 
 public class AUTH extends Activity {
 
-    private static String CLIENT_ID = "7425457";
-    private static String CLIENT_SECRET = "hDD98CRGfW2ns4bEm1C8";
+    private static String CLIENT_ID = "7445474";
+    private static String CLIENT_SECRET = "krL7V9qecCh34ck0nkmD";
     private static String TOKEN_URL = "https://oauth.vk.com/access_token";
     private static String OAUTH_URL = "http://oauth.vk.com/authorize";
     private static String RESPONSE_TYPE = "code";
     private static String VK_API_URL = "https://api.vk.com/method/users.get";
     private static String REDIRECT_URI = "http://localhost";
-    private static String OUR_SERVER = "http://109.252.69.85:8080/VK/";
+    private static String OUR_SERVER = "109.252.69.85:8080";
 
     WebView web;
     Button auth;
@@ -54,9 +56,10 @@ public class AUTH extends Activity {
                 auth_dialog.setContentView(R.layout.auth_dialog);
                 web = (WebView) auth_dialog.findViewById(R.id.webv);
                 web.getSettings().setJavaScriptEnabled(true);
-                web.loadUrl(OAUTH_URL + "?client_id=" + CLIENT_ID
-                        + "&redirect_uri=" + REDIRECT_URI + "&response_type="
-                        + RESPONSE_TYPE);
+
+                web.loadUrl("https://oauth.vk.com/authorize?client_id=7445474&display=page&scope=friends&response_type=token&v=5.103&state=228228");
+
+
                 web.setWebViewClient(new WebViewClient() {
                     boolean authComplete = false;
                     Intent resultIntent = new Intent();
@@ -64,6 +67,7 @@ public class AUTH extends Activity {
                     @Override
                     public void onPageStarted(WebView view, String url, Bitmap favicon) {
                         super.onPageStarted(view, url, favicon);
+                        Log.i("", "ALO");
                     }
 
                     String authCode;
@@ -74,7 +78,7 @@ public class AUTH extends Activity {
                         if (url.contains("?code=") && authComplete != true) {
                             Uri uri = Uri.parse(url);
                             authCode = uri.getQueryParameter("code");
-                            Log.i("", "CODE : " + authCode);
+
                             authComplete = true;
                             resultIntent.putExtra("code", authCode);
                            AUTH.this.setResult(Activity.RESULT_OK, resultIntent);

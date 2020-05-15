@@ -1,4 +1,4 @@
-package com.example.samsunghomework;
+package com.example.samsunghomework.AUTH;
 
 import android.util.Log;
 import org.apache.http.HttpEntity;

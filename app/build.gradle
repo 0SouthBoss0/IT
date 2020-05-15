@@ -31,12 +31,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-
+    implementation "com.orhanobut:hawk:2.0.1"
 // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     //appcompat
     implementation 'com.android.support:appcompat-v7:28.0.0'
-
+    //шифрование
+    implementation "androidx.security:security-crypto:1.0.0-alpha02"
 }
 
