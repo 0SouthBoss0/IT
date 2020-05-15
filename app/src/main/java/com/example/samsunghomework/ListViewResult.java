@@ -2,7 +2,6 @@ package com.example.samsunghomework;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -22,8 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.orhanobut.hawk.Hawk;
 
-import java.io.IOException;
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +28,6 @@ import java.util.List;
 public class ListViewResult extends AppCompatActivity {
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
-    SharedPreferences sPref;
     String UNIC = "";
     ListView listView;
 
@@ -46,13 +42,9 @@ public class ListViewResult extends AppCompatActivity {
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
         UNIC = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
-        try {
-            loadText(UNIC);
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+        loadText(UNIC);
+
 
         if (DAY <= 3) {
             myArr.add("Нижнее белье: " + DAY + " шт.");
@@ -138,8 +130,8 @@ public class ListViewResult extends AppCompatActivity {
 
 
         if (DAY > 3 && DAY <= 10) { //СТИРКА
-            myArr.add("Нижнее белье: " + (int) Math.round(DAY / 2) + " шт.");
-            myArr.add("Носки: " + (int) Math.round(DAY / 2) + " шт.");
+            myArr.add("Нижнее белье: " + Math.round(DAY / 2) + " шт.");
+            myArr.add("Носки: " + Math.round(DAY / 2) + " шт.");
             if (curr1 == 1) {
                 myArr.add("Теплая непромокаемая куртка");
                 myArr.add("Шарф, перчатки: 2 пары");
@@ -350,7 +342,7 @@ public class ListViewResult extends AppCompatActivity {
 
         }
 
-        monthAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, myArr);
+        monthAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, myArr);
 
         listView = findViewById(R.id.listodejda);
         listView.setAdapter(monthAdapter);
@@ -365,7 +357,7 @@ public class ListViewResult extends AppCompatActivity {
                         String element = myArr.get(position), sub = "✔";
 
 
-                        if (element.indexOf(sub) == -1) {
+                        if (!element.contains(sub)) {
                             myArr.set(position, (element + " ✔️"));
                             monthAdapter.notifyDataSetInvalidated();
 
@@ -374,7 +366,7 @@ public class ListViewResult extends AppCompatActivity {
                         for (int i = 0; i < myArr.size(); i++) {
 
                             String ll = myArr.get(i), subb = "✔";
-                            if (ll.indexOf(subb) != -1) {
+                            if (ll.contains(subb)) {
                                 counter++;
                             }
                         }
@@ -430,7 +422,6 @@ public class ListViewResult extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case R.id.add:
                 addItem();
@@ -719,7 +710,6 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.show();
 
-        /////////////////////
     }
 
     private void deleteItem(int position) {
@@ -743,13 +733,9 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                try {
-                    saveText();
-                } catch (GeneralSecurityException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
+                saveText();
+
 
             }
         });
@@ -766,7 +752,7 @@ public class ListViewResult extends AppCompatActivity {
     }
 
 
-    private void saveText() throws GeneralSecurityException, IOException {
+    private void saveText() {
         Context context = getApplicationContext();
         Hawk.init(context).build();
         for (int i = 0; i < myArr.size(); i++) {
@@ -776,21 +762,14 @@ public class ListViewResult extends AppCompatActivity {
         Hawk.put(UNIC, SAVEDITEMS);
 
 
-        /*sPref = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(UNIC, SAVEDITEMS);
-        ed.commit();
-*/
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Ваш список сохранен", Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    private void loadText(String UNIC) throws GeneralSecurityException, IOException {
+    private void loadText(String UNIC) {
         Context context = getApplicationContext();
         Hawk.init(context).build();
-        /*sPref = getPreferences(MODE_PRIVATE);
-        String savedText = sPref.getString(UNIC, SAVEDITEMS);*/
 
         String savedText = Hawk.get(UNIC);
 
@@ -829,14 +808,13 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
-    public void onqq(ListView l, View v, int position, long id) {
+    public void onqq(ListView l) {
         l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id1) {
-////////////////////////////////////////////////////////////////////////////////////////////////
+
                 ListViewResult.this.openContextMenu(l);
 
-////////////////////////////////////////////////////////////////////////////////////////////////
 
                 return true;
             }
@@ -880,9 +858,9 @@ public class ListViewResult extends AppCompatActivity {
     Button addgfhButton;
 
     public void addsetText(int addType) {
-        addinButton = (Button) addview.findViewById(R.id.addin);
-        addgfxtrButton = (Button) addview.findViewById(R.id.addgfxtr);
-        addgfhButton = (Button) addview.findViewById(R.id.addgfh);
+        addinButton = addview.findViewById(R.id.addin);
+        addgfxtrButton = addview.findViewById(R.id.addgfxtr);
+        addgfhButton = addview.findViewById(R.id.addgfh);
         if (addType == 1) {
             addinButton.setText("шт. ✔");
             addgfxtrButton.setText("пачек");

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
             SharedPreferences.Editor e = check.edit();
             e.putBoolean("hasVisited", true);
-            e.commit(); // не забудьте подтвердить изменения
+            e.apply(); // не забудьте подтвердить изменения
         }
     }
 
@@ -201,9 +201,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void turizm(View view) {
-        //   if (galka3 == 0)
+
         turuzm.setImageResource(R.drawable.galka);
-        //  else
+
         if (curr2 == 2) {
             komandirovka.setImageResource(R.drawable.komandirovka);
             turuzm.setImageResource(R.drawable.galka);
@@ -220,9 +220,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void komandirovka(View view) {
-        //  if (galka3 == 0)
+
         komandirovka.setImageResource(R.drawable.galka);
-        // else
+
         if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             komandirovka.setImageResource(R.drawable.galka);
@@ -239,9 +239,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void plyazh(View view) {
-        // if (galka3 == 0)
+
         plyazh.setImageResource(R.drawable.galka);
-        //else
+
         if (curr3 == 1) {
             turuzm.setImageResource(R.drawable.turizm);
             plyazh.setImageResource(R.drawable.galka);
@@ -289,7 +289,6 @@ public class MainActivity extends AppCompatActivity {
                 builder.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
-                        // Do do my action here
 
                         Intent i = new Intent(MainActivity.this, ListViewResult.class);
 
