@@ -1,5 +1,6 @@
 package com.example.samsunghomework;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +20,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.orhanobut.hawk.Hawk;
+
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,7 +46,13 @@ public class ListViewResult extends AppCompatActivity {
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
         UNIC = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
-        loadText(UNIC);
+        try {
+            loadText(UNIC);
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if (DAY <= 3) {
             myArr.add("Нижнее белье: " + DAY + " шт.");
@@ -482,7 +493,11 @@ public class ListViewResult extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "Введите название вещи", Toast.LENGTH_SHORT);
                     toast.show();
-                } else {
+                }
+                if (qqq.isEmpty()) {
+                    myArr.add(qq);
+                }
+                if (!qq.isEmpty() && !qqq.isEmpty()) {
 
                     int addCheck = 0;
                     int typeAdd = 0;
@@ -495,9 +510,11 @@ public class ListViewResult extends AppCompatActivity {
                         toast.show();
                         addCheck = 1;
                     }
-                    if (addCheck == 0) {
+                    if (typeAdd == 1 || typeAdd == 0) {
+                        myArr.add(qq);
+                    } else if (addCheck == 0) {
                         if (addType != 0) {
-                            if (typeAdd == 1) {
+                            if (addType == 1) {
                                 addtypfre = "шт.";
 
 
@@ -526,21 +543,18 @@ public class ListViewResult extends AppCompatActivity {
                                     addtypfre = "пар";
                                 }
 
-
                             }
-                            myArr.add(qq + ": " + qqq + " " + addtypfre);
-                        } else {
-                            myArr.add(qq + ": " + qqq);
                         }
-
-
-                        monthAdapter.notifyDataSetInvalidated();
+                        myArr.add(qq + ": " + qqq + " " + addtypfre);
+                    } else {
+                        myArr.add(qq + ": " + qqq);
                     }
 
 
                 }
 
 
+                monthAdapter.notifyDataSetInvalidated();
             }
         });
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -646,7 +660,7 @@ public class ListViewResult extends AppCompatActivity {
                         monthAdapter.notifyDataSetInvalidated();
                     }
                 }
-                ;
+
             }
         });
 
@@ -729,7 +743,13 @@ public class ListViewResult extends AppCompatActivity {
 
         alert.setPositiveButton("ДА", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                saveText();
+                try {
+                    saveText();
+                } catch (GeneralSecurityException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -746,27 +766,35 @@ public class ListViewResult extends AppCompatActivity {
     }
 
 
-    private void saveText() {
-
+    private void saveText() throws GeneralSecurityException, IOException {
+        Context context = getApplicationContext();
+        Hawk.init(context).build();
         for (int i = 0; i < myArr.size(); i++) {
             SAVEDITEMS = SAVEDITEMS + myArr.get(i).replace("✔", "") + "&";
         }
 
-        sPref = getPreferences(MODE_PRIVATE);
+        Hawk.put(UNIC, SAVEDITEMS);
+
+
+        /*sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
         ed.putString(UNIC, SAVEDITEMS);
         ed.commit();
-
+*/
         Toast toast = Toast.makeText(getApplicationContext(),
                 "Ваш список сохранен", Toast.LENGTH_SHORT);
         toast.show();
     }
 
-    private void loadText(String UNIC) {
-        sPref = getPreferences(MODE_PRIVATE);
-        String savedText = sPref.getString(UNIC, SAVEDITEMS);
+    private void loadText(String UNIC) throws GeneralSecurityException, IOException {
+        Context context = getApplicationContext();
+        Hawk.init(context).build();
+        /*sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(UNIC, SAVEDITEMS);*/
 
-        if (savedText != "") {
+        String savedText = Hawk.get(UNIC);
+
+        if (Hawk.contains(UNIC)) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
             alert.setTitle("Вы хотите загрузить Ваш прошлый список?");
 
