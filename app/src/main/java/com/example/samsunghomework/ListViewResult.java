@@ -1,4 +1,7 @@
 package com.example.samsunghomework;
+/*
+Created by SouthBoss at 2020
+ */
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -26,6 +29,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ListViewResult extends AppCompatActivity {
+    //ввод переменных
     ArrayList<String> myArr = new ArrayList<>();
     ArrayAdapter<String> monthAdapter;
     String UNIC = "";
@@ -42,10 +46,12 @@ public class ListViewResult extends AppCompatActivity {
         int curr3 = getIntent().getExtras().getInt("curr3");
         int DAY = getIntent().getExtras().getInt("DAY");
         UNIC = (DAY + "" + curr1 + "" + curr2 + "" + curr3);
-
+        //проверка существования сохраненного списка с данным ключом
         loadText(UNIC);
 
-
+/*
+Далее идет логика программы, вывод предложенного системой списка
+ */
         if (DAY <= 3) {
             myArr.add("Нижнее белье: " + DAY + " шт.");
             myArr.add("Носки: " + DAY + " шт.");
@@ -345,11 +351,13 @@ public class ListViewResult extends AppCompatActivity {
         monthAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, myArr);
 
         listView = findViewById(R.id.listodejda);
+        //установка адаптера
         listView.setAdapter(monthAdapter);
         registerForContextMenu(listView);
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
+                    //По нажатию на элемент
                     public void onItemClick(AdapterView<?> arg0, View view,
                                             int position, long id) {
 
@@ -383,6 +391,7 @@ public class ListViewResult extends AppCompatActivity {
     }
 
     @Override
+    //создание контекстного меню
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
@@ -390,7 +399,7 @@ public class ListViewResult extends AppCompatActivity {
         inflater.inflate(R.menu.context_menu, menu);
     }
 
-
+    //обработка нажатия на пункт контекстного меню
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
@@ -412,7 +421,7 @@ public class ListViewResult extends AppCompatActivity {
         }
     }
 
-
+    //создание меню на actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -420,6 +429,7 @@ public class ListViewResult extends AppCompatActivity {
         return true;
     }
 
+    //обработка нажатия на пункты меню на actionbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -443,23 +453,10 @@ public class ListViewResult extends AppCompatActivity {
     Button addgfh;
     int addType = 0;
 
-    public void addin(View view) {
-        addType = 1;
-        addsetText(addType);
-    }
-
-    public void addgfxtr(View view) {
-        addType = 2;
-        addsetText(addType);
-    }
-
-    public void addgfh(View view) {
-        addType = 3;
-        addsetText(addType);
-    }
 
     String addtypfre;
 
+    //Добавление вещи
     private void addItem() {
         addview = (LinearLayout) getLayoutInflater()
                 .inflate(R.layout.adddialog, null);
@@ -501,6 +498,7 @@ public class ListViewResult extends AppCompatActivity {
                         toast.show();
                         addCheck = 1;
                     }
+                    //Изменение формы слова по падежу
                     if (typeAdd == 1 || typeAdd == 0) {
                         myArr.add(qq);
                     } else if (addCheck == 0) {
@@ -563,6 +561,7 @@ public class ListViewResult extends AppCompatActivity {
     String tyfpe;
     int Type = 0;
 
+    //Изменение количества вещи
     private void numItem(int position) {
         view = (LinearLayout) getLayoutInflater()
                 .inflate(R.layout.dialog, null);
@@ -603,6 +602,7 @@ public class ListViewResult extends AppCompatActivity {
                         toast.show();
                         check = 1;
                     }
+                    //Изменение формы слова по падежу
                     if (check == 0) {
                         if (TypeQ != 0) {
                             if (Type == 1) {
@@ -666,7 +666,8 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
-    private void editItem(int position) { //name
+    //Изменение названия вещи
+    private void editItem(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Введите Вашу изменённую вещь");
 
@@ -712,19 +713,21 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
+    //Удаление вещи
     private void deleteItem(int position) {
         myArr.remove(position);
 
         monthAdapter.notifyDataSetInvalidated();
     }
 
+    //Установка галочки по нажатию
     private void galka(int position) {
         String qq = myArr.get(position).replace("✔", "");
         myArr.set(position, qq);
         monthAdapter.notifyDataSetInvalidated();
     }
 
-
+    //Алерт на сохранение
     private void saveList() {
 
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -751,14 +754,14 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
-
+    //Сохранение списка
     private void saveText() {
         Context context = getApplicationContext();
         Hawk.init(context).build();
         for (int i = 0; i < myArr.size(); i++) {
             SAVEDITEMS = SAVEDITEMS + myArr.get(i).replace("✔", "") + "&";
         }
-
+//Шифрование SAVEDITEMS
         Hawk.put(UNIC, SAVEDITEMS);
 
 
@@ -767,10 +770,11 @@ public class ListViewResult extends AppCompatActivity {
         toast.show();
     }
 
+    //Загрузка списка
     private void loadText(String UNIC) {
         Context context = getApplicationContext();
         Hawk.init(context).build();
-
+//Дешифрование SAVEDITEMS
         String savedText = Hawk.get(UNIC);
 
         if (Hawk.contains(UNIC)) {
@@ -808,7 +812,8 @@ public class ListViewResult extends AppCompatActivity {
 
     }
 
-    public void onqq(ListView l) {
+    //Открытие контекстного меню по longClick
+    public void onlong(ListView l) {
         l.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int pos, long id1) {
@@ -822,15 +827,11 @@ public class ListViewResult extends AppCompatActivity {
     }
 
     int KNOPKA;
+    /*
+           Далее методы, устанавливающие галочку на выбранную кнопку
 
-    public void in(View view) { // шт
+            */
 
-        Type = 1;
-        setText(Type);
-        KNOPKA = 1;
-
-
-    }
 
     public void setText(int Type) {
         Button inButton = view.findViewById(R.id.in);
@@ -878,6 +879,15 @@ public class ListViewResult extends AppCompatActivity {
         }
     }
 
+    public void in(View view) { // шт
+
+        Type = 1;
+        setText(Type);
+        KNOPKA = 1;
+
+
+    }
+
     public void gfxtr(View view) { // пачек
 
 
@@ -894,6 +904,23 @@ public class ListViewResult extends AppCompatActivity {
     }
 
 
+    public void addin(View view) { //добавить шт
+        addType = 1;
+        addsetText(addType);
+    }
+
+    public void addgfxtr(View view) { //добавить пачек
+        addType = 2;
+        addsetText(addType);
+    }
+
+    public void addgfh(View view) { //добавить пар
+        addType = 3;
+        addsetText(addType);
+    }
+/*
+Created by SouthBoss at 2020
+ */
 }
 
 

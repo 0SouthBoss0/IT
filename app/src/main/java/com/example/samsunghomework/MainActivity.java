@@ -1,5 +1,7 @@
 package com.example.samsunghomework;
-
+/*
+Created by SouthBoss at 2020
+ */
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout mainlayout;
     EditText editText;
     private static final String MY_SETTINGS = "my_settings";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,18 +65,18 @@ public class MainActivity extends AppCompatActivity {
         boolean hasVisited = check.getBoolean("hasVisited", false);
 
         if (!hasVisited) {
-            // выводим нужную активность
+            // выводим тост, в будущем планируется создать обучение
             Toast toast = Toast.makeText(getApplicationContext(),
                     "WELCOME", Toast.LENGTH_SHORT);
 
             toast.show();
             SharedPreferences.Editor e = check.edit();
             e.putBoolean("hasVisited", true);
-            e.apply(); // не забудьте подтвердить изменения
+            e.apply(); // подтвержаем измениения
         }
     }
 
-
+    //вводим необходимые переменные
     int galka = 0;
     int alo = 0;
 
@@ -85,10 +88,15 @@ public class MainActivity extends AppCompatActivity {
     int galka2 = 0;
     int curr2 = 0;
 
+    /* Далее идут обработчики нажатия на соответствующую кнопку
+       Разберу то, что происходит внутри на одном примере, далее аналогично
+     */
     public void Winter(View view) {
+        //Включаем видимость для следующего ряда
         man.setVisibility(View.VISIBLE);
         child.setVisibility(View.VISIBLE);
         woman.setVisibility(View.VISIBLE);
+        //обработка смены картинки на галочку
         if (galka == 0) winter.setImageResource(R.drawable.galka);
 
         else if (curr == 2) {
@@ -215,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
         galka3 = 1;
         curr3 = 1;
         alo = 0;
+
         CONTINUE();
     }
 
@@ -258,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
         CONTINUE();
     }
 
+    //функция сбора данных и пересылки на вторую активность
     public void CONTINUE() {
 
 
@@ -328,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
             plyazh.setImageResource(R.drawable.plyazh);
         }
     }
-
-
+/*
+Created by SouthBoss at 2020
+ */
 }
